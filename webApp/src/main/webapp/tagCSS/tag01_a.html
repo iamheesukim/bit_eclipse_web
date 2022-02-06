@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 0804-2 이어서 0805-1 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title> A 태그 </title>
+
+<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<pre>
+	h1 태그는 heading의 약자
+	글의 제목으로 강조하고 싶을 때 사용한다.
+	진하게, 글자크기가 설정되어 있음
+	h1~h6 숫자가 클 수록 작음.
+</pre>
+
+<h2>같은 페이지의 특정 위치로 링크 걸기</h2>
+<h2><a href="#down" id="up">맨아래로</a></h2><br/>
+<a href="#a1">1.HTML이란?</a><br/>
+<a href="#b1">2.javascript란?</a><br/>
+<a href="#c1">3.JQuery란?</a><br/>
+<a href="#d1">4.JSP란?</a><br/>
+<a href="#e1">5.Spring이란?</a><br/>
+
+<pre>
+_blank : 새로운 창에 페이지 열기
+</pre>
+
+<h1 title="문자에 링크 걸기~~~">문자에 링크 걸기</h1>
+<a href="../index.html">상대 주소 홈페이지</a>
+<a href="/webApp/index.html">상대 주소 홈페이지</a>
+<a href="https://www.naver.com" target="_blank" title="풍선도움말">네이버</a>
+
+<h2>이미지에 링크걸기</h2>
+<a href="https://www.naver.com"> <img src="/webApp/img/img.png" width="100"/> </a>
+
+<h2>a태그를 이용한 다운로드</h2>
+<!-- pdf와 이미지 파일은 다운이 아니라 열리기만 함! -->
+<a href="/webApp/etc/UI_Design.pdf">pdf파일</a><br/>
+<a href="/webApp/etc/0702.sql">sql파일</a><br/>
+<a href="/webApp/etc/centerList.xls">xls파일</a><br/>
+<a href="/webApp/etc/1.png">png파일</a><br/>
+
+<!-- 뒤에 download 쓰면 다운으로 됨 -->
+<a href="/webApp/etc/UI_Design.pdf" download>pdf파일 다운</a><br/>
+
+<hr/>
+<a id="a1">1.HTML이란?</a><br/>
+<p>HTML이란??????</p><p>HTML이란??????</p><p>HTML이란??????</p><p>HTML이란??????</p><p>HTML이란??????</p><p>HTML이란??????</p><p>HTML이란??????</p>
+<hr/>
+<a id="b1">2.javascript란?</a><br/>
+<p>javascript란?---------------</p><p>javascript란?---------------</p><p>javascript란?---------------</p><p>javascript란?---------------</p><p>javascript란?---------------</p>
+<hr/>
+<a id="c1">3.JQuery란?</a><br/>
+<p>JQuery란?++++++++++++</p><p>JQuery란?++++++++++++</p><p>JQuery란?++++++++++++</p><p>JQuery란?++++++++++++</p><p>JQuery란?++++++++++++</p><p>JQuery란?++++++++++++</p>
+<hr/>
+<a id="d1">4.JSP란?</a><br/>
+<img src="/webApp/img/title2.png"/>
+<hr/>
+<a id="e1">5.Spring이란?</a><br/>
+<img src="../img/img.png"/><br/>
+<h2><a href="#up" id="down">맨 위로</a></h2>
+<hr/>
+</body>
+</html>

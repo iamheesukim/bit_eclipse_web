@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- 0812-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 상태 선택자 */
+	/* focus : 커서가 컴퍼넌트 선택하면 */
+	input:focus{background:pink; font-size:2em;}
+	
+	/* checked : 컴퍼넌트가 체크되면 스타일 적용 */
+	input[type=radio]:checked{width:50px;height:50px;}
+	input:checked{width:80px;height:80px;}
+	
+	/* disbled : 컴퍼넌트가 비활성화 되면 선택한다. */
+	input:disabled{color:red;}
+	
+	/* enabled : 컴퍼넌트가 활성화 되면 선택한다. */
+	input:enabled{background-color:black; color:white;}
+	
+</style>
+</head>
+<body>
+<form method="post" action="aaaa.jsp">
+	이름:<input type="text" name="username" value="hong gil dong" readonly/><br/>
+	아이디:<input type="text" name="userid" value="gildong" disabled/><br/>
+	관심분야 : <input type="checkbox" name="interest" value="농구" checked/>농구
+			<input type="checkbox" name="interest" value="배구"/>배구
+			<input type="checkbox" name="interest" value="축구"/>축구
+			<input type="checkbox" name="interest" value="탁구"/>탁구<br/>
+	취미:<input type="radio" name="hobby" value="쇼핑"/>쇼핑
+		<input type="radio" name="hobby" value="인터넷" checked/>인터넷
+		<input type="radio" name="hobby" value="운동"/>운동
+		<input type="radio" name="hobby" value="웹툰"/>웹툰<br/>
+	<input type="submit" value="등록"/>
+
+</form>
+</body>
+</html>

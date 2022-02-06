@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- 0819-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   #postView{
+      width:880px;
+      height:114px;
+      margin:0 auto;
+   }
+   
+   #postView > *{
+      height:114px;
+      float:left;
+   }
+   
+   #postView > button{
+      width:30px;
+   }
+   
+   #postView > div{
+      width:820px;
+      overflow:hidden;
+   }
+   
+   #imgList{
+      width:1640px;
+      position:relative;
+      top:0; left:-100px;
+   }
+   
+</style>
+<script>
+   // 포스트 이미지 세팅
+   function setPostImage(){
+      var tag="";
+      for(var i=1; i<=20; i++){
+         tag += "<img src='movie" 
+         if(i<10){
+            tag += "0"+i +".png'/>";
+         } else{
+            tag += i +".png'/>";
+         }
+      }
+      console.log(tag);
+      document.getElementById("imgList").innerHTML = tag;
+   }
+   
+   var left = 0, step=-5,timer;
+   function postMove(){
+	   
+	  //한쪽방향
+      // 0, -5, -10...
+      //left -= 5;
+      
+	  left=left+step;
+	  
+      document.getElementById("imgList").style.left = left+"px";     
+      if(left<=-820) {
+    	  step=5;
+      }
+      else if (left>=0) {
+    	  step=-5;
+      }
+   }
+   
+</script>
+</head>
+<body onload="setPostImage(); timer=setInterval('postMove()', 10)">
+   <div id="postView">
+      <input type="button" value="◀" onclick="step=-5"/>
+      <div onmouseover="clearInterval(timer)" onmouseout="timer=setInterval('postMove()', 10)">
+         <div id="imgList">
+            <!-- 자바스크립트에서 setPostImage()로 이미지 세팅 -->
+         </div>
+      </div>
+      <input type="button" value="▶" onclick="step=5"/>
+   </div>
+</body>
+</html>

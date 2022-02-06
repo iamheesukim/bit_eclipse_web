@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- 0817-1 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#result{background-color:lightblue;}
+</style>
+<script>
+	//연산자 : +,-,||,&&,<=,++...
+	//if, if~else, while, for, do~while, break, continue, switch
+	
+	//alert("페이지가 로딩됨");
+	
+	//구구단 구하는 함수
+	//		함수명 (변수, 변수, 변수)
+	function gugudan(dan) {
+		var r = "";
+		for(i=2; i<=9; i++) {
+			r += dan +"*"+i+"="+(dan*i)+"<br/>";
+		}
+		console.log(r);
+		//result에 출력할 내용 -> r
+		document.getElementById("result").innerHTML = r;
+	}
+	
+	/* 함수 2개 사용시
+	
+	//마우스 오버시 호출
+	function imageChange() {
+		document.getElementById("img").src="../img/delight.png";
+	}
+	//마우스 아웃시 호출
+	function imageChange2() {
+		document.getElementById("img").src="../img/do2.png";
+	}
+	*/
+	
+	/*
+	function imageChanege3(file){
+		document.getElementById("img").src = "../tagCSS/glass/glass"+file+".gif";
+	}
+	
+	*/
+	function imageChange4(obj,n) {
+		obj.src="../tagCSS/glass/glass"+n+".gif";
+	}
+	
+</script>
+</head>
+<body>
+
+<input type="button" value="click하세요" onclick="gugudan(9); alert('구구단이 출력됨')"/>
+<button>클릭하세요</button>
+<div id="result">결과 출력 위치</div>
+
+<!-- <img src="../img/do2.png" id="img" onmouseover="imageChange()" onmouseout="imageChange2()"/> --> 
+<!-- <img src="../tagCSS/glass/glass1.gif" id="img" onmouseover="imageChange3(2)" onmouseout="imageChange3(1)"/> -->
+<!-- <img src="../img/do2.png" id="img" onmouseover="this.src='../img/delight.png'" onmouseout="this.src='../img/do2.png'"/> -->
+<img src="../tagCSS/glass/glass1.gif" id="img" onmouseover="imageChange4(this,2)" onmouseout="imageChange4(this,1)"/>
+
+</body>
+</html>

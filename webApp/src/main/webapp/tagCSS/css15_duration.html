@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 0812-7 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+		width:500px; height:500px; border:1px solid gray; overflow:hidden;
+		overflow:hidden;
+		
+		/* 지정한 시간을 기준으로 변환한다 (초단위)*/
+		transition-duration:2s; /* 접거나 열리는데 2초 걸림 */
+		
+		/* 투명도 */
+		opacity:1;
+	}
+	
+	input:checked+div{
+		height:0px; /*체크해제되면 500px로 돌아감*/
+		opacity:0;
+	}
+	
+</style>
+</head>
+<body>
+<input type="checkbox"/> 클릭하세요.
+
+<div>
+	<img src="../img/do2.png"/>
+	<img src="../img/com.jpg"/>
+</div>
+
+</body>
+</html>

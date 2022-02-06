@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--  0806-2 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>표 만들기</h1>
+<pre>
+	table 태그 : 표의 시작과 끝
+	tr 태그 : 표의 줄을 생성
+	
+	td, th 태그 : 줄에 칸 생성, 컨텐츠 표시하는 곳
+	td -> 왼쪽정렬, plain
+	th -> 가운데정렬, bold
+	caption : 표의 제목을 설정 (위치 상관 없이 무조건 표의 상단)
+	
+	colgroup, col
+	
+	table border : 경계선(두줄)
+	width % : 창의 크기에 비례해서 넓이가 정해짐
+	width (px) : 고정 크기의 넓이
+	height : 높이
+	table에서 높이를 정하면 tr에 설정해도 의미 없음
+	td에서 높이를 지정하면 그 td가 있는 tr 전체가 높이가 바뀜
+	td에서 넓이를 지정하면 그 td가 있는 열 전체가 넓이가 바뀜
+	cellspacing : 테두리 선과 선 사이의 여백(간격)
+	cellpading : 테두리 선과 컨텐츠의 여백(간격)
+	
+	bgcolor : 배경색상 (테이블에 지정하고 후에 행,열에 지정하면 덮어쓰기(?) 가능)
+	
+	thead / tbody / tfoot : 시각장애인들을 위한 분리(?)
+	
+</pre>
+
+<table border="10" width="100%" cellspacing="0" cellpadding="10">
+	<caption><b>오늘의 일정표</b></caption>
+	
+	<colgroup>
+	<!--
+	<col/> 당 한 열
+	span="2" -> 첫번째 칼럼과 두번째 칼럼을 같은 기능을 적용 -> 따라서 <col>이 2개만 필요
+	-->
+		<col span="2" bgcolor='#ddd'/>
+		<col background="../img/img.png"/>
+	</colgroup>
+	
+	<thead>
+	<tr height = "100">
+		<th width="50">테이블 태그 연습중</th>
+		<td>코스모스</td>
+		<td><img src="../img/title2.png" width="100"></td>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr>
+		<td height = "200">두번째 줄</td>
+		<td>
+			<table border="1">
+				<tr>
+					<td>XXXX</td>
+					<td>YYYY</td>
+				</tr>
+			</table>
+		</td>
+		<td>AAAA</td>
+	</tr>
+	</tbody>
+	
+	<tfoot>
+	<tr height = "100">
+		<td>장미</td>
+		<td>맨드라미</td>
+		<td>해바라기</td>
+	</tr>
+	</tfoot>
+</table>
+</body>
+</html>

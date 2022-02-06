@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--0813-5 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ul,li {margin:0; padding:0; list-style-type:none;}
+	
+	#tabMenu{
+		width:602px;
+		height:540px;
+		padding:10px;
+		border:1px solid #ddd;
+		position : relative;
+		overflow:hidden;
+	}
+	
+	#tabMenu>ul>li{
+		float : left;
+		margin-right:20px;
+	}
+	
+	#tabMenu>div{
+		position:absolute;
+		top:50px;
+	}
+	
+	#tabMenu>input, #tabMenu>div{
+		display:none;
+	}
+	
+	/*메뉴를 선택하면 input이 checked되면 해당 컨텐츠를 보여주는 기능*/
+	#m1:checked ~ div:nth-of-type(1){display:block;}
+	#m2:checked ~ div:nth-of-type(2){display:block;}
+	#m3:checked ~ div:nth-of-type(3){display:block;}
+	#m4:checked ~ div:nth-of-type(4){display:block;}
+	#m5:checked ~ div:nth-of-type(5){display:block;}
+	#m6:checked ~ div:nth-of-type(6){display:block;}
+	#m7:checked ~ div:nth-of-type(7){display:block;}
+	#m8:checked ~ div:nth-of-type(8){display:block;}
+	#m9:checked ~ div:nth-of-type(9){display:block;}
+	
+</style>
+</head>
+<body>
+<div id="tabMenu">
+	<!-- 메뉴 -->
+	<ul>
+		<li><label for="m1">블로그</label></li>
+		<li><label for="m2">카페</label></li>
+		<li><label for="m3">지식공간</label></li>
+		<li><label for="m4">영화</label></li>
+		<li><label for="m5">뮤직</label></li>
+		<li><label for="m6">웹툰</label></li>
+		<li><label for="m7">스토리볼</label></li>
+		<li><label for="m8">브런치</label></li>
+		<li><label for="m9">게임</label></li>
+	</ul>
+	
+	<input type="radio" name="menu" id="m1" checked/>
+	<input type="radio" name="menu" id="m2"/>
+	<input type="radio" name="menu" id="m3"/>
+	<input type="radio" name="menu" id="m4"/>
+	<input type="radio" name="menu" id="m5"/>
+	<input type="radio" name="menu" id="m6"/>
+	<input type="radio" name="menu" id="m7"/>
+	<input type="radio" name="menu" id="m8"/>
+	<input type="radio" name="menu" id="m9"/>
+	
+	<!-- 컨텐츠 -->
+	<div><img src="tab2.png"/></div>
+	<div><img src="tab4.png"/></div>
+	<div><img src="tab5.png"/></div>
+	<div><img src="tab6.png"/></div>
+	<div><img src="tab7.png"/></div>
+	<div><img src="tab8.png"/></div>
+	<div><img src="tab9.png"/></div>
+	<div><img src="tab10.png"/></div>
+	<div><img src="tab11.png"/></div>
+</div>
+
+</body>
+</html>

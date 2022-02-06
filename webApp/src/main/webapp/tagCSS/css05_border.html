@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 0811-2 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{width:200px; height:200px;}
+	
+	/*
+		border-style : 선 모양 (solid:실선, dotted:점선, dashed, double(이중선), groove(홈), inset(볼록))
+			border-right-style, left, top, bottom
+			
+		border-width : 선 두께
+			border-right-width, ...
+		border-color : 선 색상
+			border-left-color, ...
+	*/
+	
+	img {
+		/*
+		border-style:dashed;
+		border-right-style:double;
+		*/
+		
+		border-style : solid dotted dashed double; /*그룹화 시계방향*/
+		border-width : 10px 15px 5px 10px;
+		border-color : red green blue pink;
+	}
+	li {
+		border : 5px solid lightblue; /*border 특성끼리 그룹화*/
+		}
+</style>
+</head>
+<body>
+<img src="../img/title2.png"/>
+<img src="../img/img.png"/>
+<img src="../img/do2.png"/>
+
+<ul>
+	<li>Border 속성</li>
+	<li>style : 선모양</li>
+	<li>width : 선의 두께</li>
+	<li>color : 선의 색상</li>
+</ul>
+</body>
+</html>

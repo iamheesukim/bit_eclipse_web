@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+	cascade style sheet
+	
+	인라인 스타일 : html 태그에 style 속성을 이용한다
+	임베디드 스타일 : style 태그를 이용하여 스타일시트 적용하기
+	외부파일을 이용한 스타일
+ -->
+ 
+ <style>
+ 	/*
+ 	스타일 시트의 주석문
+ 	1. 태그선택자
+ 	2. 아이디선택자
+ 	3. 클래스선택자
+ 	*/
+ 	ol{
+ 		color:green;
+ 		background-color:pink;
+ 		}
+ 	li{
+ 		font-size:20px;
+ 	}
+ 	
+ 	/*아이디 선택자*/
+ 	#jsp{
+ 		text-decoration:overline; /*overline윗줄 underline아랫줄 line-througth취소선 none없음*/
+ 	}
+ 	
+ 	.c1 {
+ 		color:red;
+ 	}
+ 	
+ 	.c2 {
+ 		background-color:#5d8;
+ 	}
+ </style>
+</head>
+<body style="background-color:#ddd">
+<ul style="background-color:lightblue; color:blue">
+	<li>복숭아</li>
+		<!-- 	속성	:	속성값 (red라고 써줘도됨) -->
+	<li style="background-color:yellow">사과</li>
+	<li class="c1 c2">오렌지</li>
+	<li>파인애플</li>
+</ul>
+
+<ol>
+	<li class="c1">자바</li>
+	<li>자바스크립트</li>
+	<li id="jsp" class="c2">Java Server Page</li>
+	<li>Spring Framework</li>
+</ol>
+
+</body>
+</html>

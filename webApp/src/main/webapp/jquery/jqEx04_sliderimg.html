@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	#banner img{width:500px; height:400px;}
+	#banner{overflow:hidden;position:relative; width:500px; height:400px; margin:0 auto; border:1px solid gray;}
+	
+	/*이미지 목록*/
+	#bannerImg{width:3000px;}
+	
+	/*설명서*/
+	#slideTxt{
+		position:absolute; left:-430px; top:80px; width:400px; height:250px;
+		color:blue; border:1px solid red; 
+	}
+	#slideTxt>div{position:absolute; left:0px; top:0px; width:400px; height:250px;}
+	
+	/*컨트롤러*/
+	#controll{position:absolute; left:80px; top:350px;}
+	#controll>div{background-image:url(../img/point_button.png); width:15px; height:15px; float:left; margin : 0 15px;}
+
+</style>
+<script>
+	function slideImage(i) {
+		$('#bannerImg').animate({marginLeft:-(i*500)+"px"},2000);
+		
+		//설명
+		$('#slideTxt>div').animate({marginLeft:'0px'},0);
+		$('#slideTxt>div').eq(i).delay(1000).animate({marginLeft:'500px'},500);
+		
+		//컨트롤러
+		$('#controll>div').css('background-position','0px 0px');
+		$('#controll>div').eq(i).css('background-position','0px -30px');
+	}
+	$(()=> {
+		var imgName=['star.jpg','bbh.jpg','back.jpg','do2.png','tan.jpg','vivi.jpg'];
+		var imgTag="";
+		
+		imgName.map(function(value,idx){
+			imgTag+="<img src='../img/"+value+"'/>";
+		});
+		
+		$('#bannerImg').append(imgTag);
+		
+		//처음에 슬라이드 되기 위한 난수 생성 0~5
+		var idx=parseInt(Math.random()*(5-0+1));
+		$('#view').html(idx);
+		
+		slideImage(idx);
+		//////////////////
+		$('#controll>div').click(function() {
+			slideImage($('#controll>div').index(this)); //방금 click이 발생한 것의 index를 구함
+			
+		});
+	});
+</script>
+</head>
+<body>
+<div id="view"></div>
+<div id="banner">
+	<!-- 배너이미지 -->
+	<div id="bannerImg"></div>
+	<!-- 배너 설명 -->
+	<div id="slideTxt">
+		<div>
+			<h1>타이틀1</h1>
+			<h2>작가1</h2>
+			<p>설명1</p>
+		</div>
+		<div>
+			<h1>타이틀2</h1>
+			<h2>작가2</h2>
+			<p>설명2</p>
+		</div>
+		<div>
+			<h1>타이틀3</h1>
+			<h2>작가3</h2>
+			<p>설명3</p>
+		</div>
+		<div>
+			<h1>타이틀4</h1>
+			<h2>작가4</h2>
+			<p>설명4</p>
+		</div>
+		<div>
+			<h1>타이틀5</h1>
+			<h2>작가5</h2>
+			<p>설명5</p>
+		</div>
+		<div>
+			<h1>타이틀6</h1>
+			<h2>작가6</h2>
+			<p>설명6</p>
+		</div>
+	</div>
+	<!-- 컨트롤러 -->
+	<div id="controll">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<p>
+</div>
+</body>
+</html>

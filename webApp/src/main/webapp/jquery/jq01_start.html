@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.6.0.js"></script>
+<script>
+   document.write("<h1>자바스크립트 실행</h1>");
+   
+   function msg(){
+      alert("msg() 함수가 실행됨");
+   }
+   // JQuery는 document의 ready 이벤트에 의해서 실행됨
+   // ready 이벤트는 document가 실행이 끝나면 발생한다.
+   
+   // 선택자
+   $(document).ready(function(){
+      // 실행문
+      alert("JQuery가 실행됨");
+      
+      msg();
+   });
+   
+</script>
+</head>
+<body>
+<img src="../img/do2.png"/>
+</body>
+</html>

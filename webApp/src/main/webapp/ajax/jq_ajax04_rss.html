@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(function() {
+		
+		function zeroSet(data) { //날짜에 0 붙여주는 함수
+			if(data<10) {
+				return "0"+data;
+			}else {
+				return data;
+			}
+		}
+		
+		$('#ajaxStart').click(function() {
+			$.ajax({
+				url:"rss_news.xml",
+				dataType:"xml",
+				success:function(result) {
+					if($(result).find('item').length>0) {
+						$(result).find('item').each(function() {
+							var tag="<li><a href='"+$(this).find('link').text()+"&utm_source=khan_rss&utm_medium=rss&utm_content=kh_world"+"'>"+$(this).find('title').text()+"</a> (";
+							//날짜
+							var d = $(this).find('dc').text(); //2021-08-29T09:41:00+09:00
+							//원래는 dc:date인데 오류 생겨서 xml파일을 수정함
+							//$(this).children().eq(3).text()로 하면 dc:date자체로 가져올순 있음
+							var realDate = new Date(d);
+							//년-월-일 시:분
+							var y = realDate.getFullYear();
+							var m = realDate.getMonth()+1;
+							var d = realDate.getDate();
+							var h = realDate.getHours();
+							var mm = realDate.getMinutes();
+					
+							var dateTxt = y+'-'+zeroSet(m)+'-'+zeroSet(d)+' '+zeroSet(h)+':'+zeroSet(mm);
+							tag += dateTxt + ', ' + $(this).find('author').text()+") <br/>";
+							
+							tag += $(this).find('description').text()+"</li>";
+							
+							$('#news').append(tag);
+						});
+					}
+				},
+				error:function() {
+					console.log('news 전송 실패');
+				}
+			});
+		});
+	});
+</script>
+
+</head>
+<body>
+<button id="ajaxStart">ajax로 RSS 파일정보 얻어오기</button>
+<ol id="news"></ol>
+</body>
+</html>

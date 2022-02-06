@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	#memberList td{border:1px solid gray; width:200px;}
+</style>
+<script>
+	$(()=> {
+		$('#btn').click(function() {
+			$.ajax({
+				url:'ajax_test.xml',
+				dataType:'xml',
+				success:function(result) {
+					
+					//개인적인 확인용
+					//var test = $(result).find('record').length;
+					//console.log(test);
+					//0으로 떠서 이상했는데 xml파일에 record 오타있었음
+					
+					//find()를 이용하여 태그의 정보를 얻어온다
+					//							length->record의 갯수 (주소록 회원 수)
+					if($(result).find('record').length>0) { //회원이 있으면 (없으면 실행할 필요가 없음)
+						$(result).find('record').each(function() { //each -> record 수만큼 반복
+							//반복문이 돌아가니까 this가 1,2,3,4..번째 데이터..로 반복
+							var username = $(this).find('username').text();
+							var tel = $(this).find('tel').text();
+							var addr = $(this).find('addr').text();
+							
+							var tag = "<tr><td>"+username+"</td><td>"+tel+"</td><td>"+addr+"</td></tr>";
+							$('#memberList').append(tag);
+						}); 
+						
+					}
+				},
+				error:function(request) {
+					console.log('xml 파일 가져오기 실패');
+					console.log(request.responseText);
+				}
+			});
+		});
+	});
+</script>
+</head>
+<body>
+<button id="btn">ajax로 xml정보 비동기식으로 가져오기</button>
+<hr/>
+<table id="memberList"></table>
+</body>
+</html>

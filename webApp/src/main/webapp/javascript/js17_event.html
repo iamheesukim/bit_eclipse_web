@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#d1 {
+		height:200px;
+		background-color:pink;
+		padding:50px;
+	}
+	#d1>div {
+		height:100px;
+		background-color:lightblue;
+		padding:50px;
+	}
+	#d1 h1{
+		background-color:orange;
+	}
+</style>
+<script>
+/*
+	onmouseover, onmouseout : 이벤트 객체 내부의 각 태그마다 이벤트가 발생한다
+	
+	onmouseenter : over
+	onmouseleave : out 이벤트 객체 내부의 각 태그는 이벤트가 발생하지 않는다
+	
+	onmousedown //클릭
+	onmouseup //클릭 놓을 때
+	onmousemove //마우스 움직일 때
+	
+	onfocus : 객체에 커서가 들어가면
+	onblur : 객체에서 커서가 나가면
+	
+	onsubmit : submit누를때
+	onreset : reset 누를때
+		
+	onkeydown : 누른상태
+	onkeypress : 누른상태
+	onkeyup : 누른후 놓을때
+	
+	onchange : value의 값이 변경됨
+	
+	onresize : 창의 크기가 바뀜.
+ */
+	var cnt=0;
+	function mouseOverTest() {
+		document.getElementById("view").innerHTML = "<h1>"+ ++cnt +"</h1>";
+	}
+	var count=0;
+	function mouseOutTest() {
+		document.getElementById("view2").innerHTML = "<h1>"+ ++count +"</h1>";
+	}
+	
+	function cursorTest(id) {
+		//this==이 태그 자체. 이걸 매개변수로 받아옴. 그러면getElement어쩌구 안해도됨
+		id.style.fontSize="3em";
+		id.style.backgroundColor="#ddd";
+	}
+	
+	function cursorTest2(blur) {
+		blur.style.fontSize="1em";
+	}
+	
+	function formCheck(){
+		//name 기준
+		if(document.frm.userid.value==""){
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		
+		//id 기준
+		if(document.getElementById("username").value==""){
+			alert("비밀번호를 입력하세요."); //username인데 왜 비번...?
+			return false;//함수 실행을 종료시킨다.
+		}
+		//javascript 에서 submit이 발생시키도록 해줘야 한다.
+		//document.getElementById("frm").submit();
+		document.frm.submit();
+	}
+
+	//userid에는 영문자만 입력되도록 설정
+	function keyCheck(){
+		// 방금 입력된 key의 코드를 구하면
+		var key = event.keyCode; // 65~90, 97~122
+		if(!(key>=65 && key<=90 || key>=97 && key<=122 || key==8)){ // 영문자 &&, || 어차피 ||보다 &&가 먼저 실행됨
+		// 영문자 외의 문자가 입력됐을 때 입력값 취소
+		event.returnValue = false;      
+      }
+	}
+	
+	function dataChange() {
+		console.log("데이터 바뀜");
+	}
+	
+	function winSize() {
+		console.log("창의 크기 바뀜")
+		//window.resizeTo(800,800); -> 창의크기가 원래대로 돌아옴. 이건 팝업창에서만 확인 가능 (js16에서 확인)
+	}
+</script>
+</head>
+<body onresize="winSize()">
+<div>
+<form name="frm" id="frm" method="get" action="test.jsp">
+	<input type="text" name="userid" id="userid" 
+	onfocus="cursorTest(this)" onblur="cursorTest2(this)" onkeydown="keyCheck()"/><br/> <!-- this==이 태그 자체. 그러면getElement어쩌구 안해도됨 -->
+	<input type="text" name="username" id="username" 
+	onfocus="cursorTest(this)" onblur="cursorTest2(this)" onchange="dataChange()"/><br/>
+	
+	<input type="button" value="클릭button" onclick="formCheck()"/><br/> <!-- 얘는 다름. test로 안 넘어감. 나머지들은 서버가 갖고있음 -->
+	<input type="submit"/><br/> <!-- test.jsp로 넘어감 -->
+	<input type="image" src="../img/do2.png"/> <!-- test.jsp로 넘어감 -->
+	<button>등록</button> <!-- test.jsp로 넘어감 -->
+</form>
+</div>
+<!-- <div  id="d1" onmouseover="mouseOverTest()" onmouseout="mouseOutTest()"> -->
+<div  id="d1" onmouseenter="mouseOverTest()" onmouseleave="mouseOutTest()" onmousedown="this.style.backgroundColor='yellow'">
+	<div>
+		<h1>Mouseover, Mouseout 테스트</h1>
+	</div>
+</div>
+<div id="view"></div>
+<div id="view2"></div>
+</body>
+</html>

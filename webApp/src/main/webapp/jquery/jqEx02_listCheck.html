@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+   ul,li{margin:0;
+      padding:0;
+      list-style:none;
+      }
+   .container{width:800px;
+            margin:0 auto;
+      }
+      #boardList>li{
+         float:left;
+         width:10%;
+         height:40px;
+         line-height:40px;
+         border-bottom:1px solid #ddd;
+      }
+      #boardList>li:nth-child(6n+3){ /*li6개 중에서 3번째*/
+         width:50%;
+      }
+      
+   .wordCut{
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+   }
+</style>
+<script>
+   $(()=>{
+      $('#allChk').on('change',function(){//체인지 이벤트가 발생하면
+    	  //prop('속성종류') => 그 속성종류 자체의 상태를 뜻함 true or false
+    	  //prop('속성종류',상태) => 그 속성종류를 상태로 바꿔라
+            $('#boardList input[type=checkbox]').prop('checked',$('#allChk').prop('checked'));
+      
+      }); 
+      
+   });
+</script>
+</head>
+<body>
+<div class="container">
+   <input type="checkbox" id="allChk">전체선택
+   <ul id="boardList">
+      <li><input type="checkbox" name="chk" value="100"/></li>
+      <li>100</li>
+      <li class="wordCut">글제목aadfsfsdfsd jjjjjjsd fdsf sdf sdf ds fsd fs df sd fsd f sdf </li>
+      <li>홍길동</li>
+      <li>등록일</li>
+      <li>조회수</li>
+      <li><input type="checkbox" name="chk" value="99"/></li>
+      <li>99</li>
+      <li class="wordCut">글제목</li>
+      <li>홍길동</li>
+      <li>등록일</li>
+      <li>조회수</li>
+      <li><input type="checkbox" name="chk" value="98"/></li>
+      <li>98</li>
+      <li  class="wordCut">글제목123456485 1213134 78 4513103 4 65465464 132 12313213 456465 464</li>
+      <li>홍길동</li>
+      <li>등록일</li>
+      <li>조회수</li>
+      <li><input type="checkbox" name="chk" value="97"/></li>
+      <li>97</li>
+      <li  class="wordCut">글제목</li>
+      <li>홍길동</li>
+      <li>등록일</li>
+      <li>조회수</li>
+      <li><input type="checkbox" name="chk" value="96"/></li>
+      <li>96</li>
+      <li  class="wordCut">글제목</li>
+      <li>홍길동</li>
+      <li>등록일</li>
+      <li>조회수</li>   
+   </ul>
+</div>
+</body>
+</html>

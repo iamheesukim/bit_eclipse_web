@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+	integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	h1 {
+		margin: 50px auto;
+		width: 180px;
+	}
+	
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	
+	#menu {
+		margin: 0 auto;
+		width: 800px;
+		height: 50px;
+		border-bottom: 1px solid gray
+	}
+	
+	#menu>ul>li {
+		float: left;
+		margin: auto 50px;
+	}
+	
+	#menu2>div {
+		background-color: white;
+		height: 200px;
+		width: 150px;
+		border: 1px solid gray;
+		float: left;
+		display:none;
+	}
+	
+	#img {
+		width: 408px;
+		height: 154px;
+		margin: 0 auto;
+	}
+	
+	#menu2 {
+		width:770px;
+		height:200px;
+		margin:0 auto;
+	}
+</style>
+<script>
+$(()=> {
+	$('#menu>ul>li:first').mouseenter(function menu2() {
+		$('#menu2>div:first').css('display','block');
+	});
+	
+	$('#menu>ul>li:first').mouseleave(function menu2() {
+		$('#menu2>div:first').css('display','none');
+	});
+	
+	$('#menu>ul>li:nth-child(2)').mouseenter(function menu2() {
+		$('#menu2>div:nth-child(2)').css('display','block');
+	});
+	
+	$('#menu>ul>li:nth-child(2)').mouseleave(function menu2() {
+		$('#menu2>div:nth-child(2)').css('display','none');
+	});
+	
+	$('#menu>ul>li:nth-child(3)').mouseenter(function menu2() {
+		$('#menu2>div:nth-child(3)').css('display','block');
+	});
+	
+	$('#menu>ul>li:nth-child(3)').mouseleave(function menu2() {
+		$('#menu2>div:nth-child(3)').css('display','none');
+	});
+	
+	$('#menu>ul>li:nth-child(4)').mouseenter(function menu2() {
+		$('#menu2>div:nth-child(4)').css('display','block');
+	});
+	
+	$('#menu>ul>li:nth-child(4)').mouseleave(function menu2() {
+		$('#menu2>div:nth-child(4)').css('display','none');
+	});
+	
+	$('#menu>ul>li:nth-child(5)').mouseenter(function menu2() {
+		$('#menu2>div:nth-child(5)').css('display','block');
+	});
+	
+	$('#menu>ul>li:nth-child(5)').mouseleave(function menu2() {
+		$('#menu2>div:nth-child(5)').css('display','none');
+	});
+});
+</script>
+</head>
+<body>
+	<h1>GIRLSDAILY</h1>
+
+	<div id="menu">
+		<ul>
+			<li>OUTER</li>
+			<li>TOP</li>
+			<li>DRESS</li>
+			<li>BOTTOM</li>
+			<li>SUMMER</li>
+		</ul>
+		<div id="menu2">
+		<div>
+			<ul>
+				<li>가디건</li>
+				<li>자켓&점퍼</li>
+				<li>베스트</li>
+				<li>코트</li>
+				<li>세일</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>Tee</li>
+				<li>Cami</li>
+				<li>Knit</li>
+				<li>Shirts%Blouse</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>All</li>
+				<li>바캉스룩</li>
+				<li>Set</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>레깅스</li>
+				<li>힐링투엘브</li>
+				<li>히든벤딩시리즈</li>
+				<li>스커트</li>
+				<li>팬츠</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li>HOLI스윕웨어</li>
+				<li>at 22'C</li>
+				<li>바캉스룩</li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	
+	
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--  0806-4 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>audio 태그</h1>
+<pre>
+	src : 재생 파일명
+	controls : 컨트롤러 표시
+	loop : 재생 횟수
+	preload : 재생파일이 전송완료되면 재생한다.
+</pre>
+
+<audio src="../sound_movie/Rose.mp3" controls> </audio>
+
+<audio controls>
+	<source src="../sound_movie/Kalimba.mp3" type="audio/mp3"/>
+	<source src="../sound_movie/Kalimba.ogg" type="audio/ogg"/>
+	<!-- 첫번째 실행이 안되면 두번째 실행 -->
+</audio>
+
+</body>
+</html>

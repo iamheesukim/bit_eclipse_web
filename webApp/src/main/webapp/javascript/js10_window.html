@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- 0818-5 popup.html연결 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var w;
+	
+	//근데 js는 변수 대입을 function안에 넣어도 전역변수에 값이 넣어지나봄?!
+	
+	//window 내장 객체
+	function winOpen() {
+		//			파일명		윈도우이름	옵션(크기->width,height,좌표->left,top)
+		w=window.open("popup.html","win",	"width=400px, height=400px, left=200px, top=200px");
+		//이름을 설정해야 창이 하나만 뜸. 같은 이름의 창은 하나뿐!
+	}
+	
+	function winClose() {
+		//window.close();
+		//self.close(); //현재창이 닫힘
+		w.close(); //팝업창을 닫고싶으면 그 창을 변수로 담아줌.
+	}
+	
+	function winMove() {
+		//절대좌표
+		//			x,	y
+		//w.moveTo(500,100);
+		
+		//상대좌표
+		//		x(+-), y(+-)
+		w.moveBy(20,20);
+		//누를때마다 이동함
+	}
+	
+	function winResize() {
+		//절대크기
+		//			w,	h
+		w.resizeTo(600,700);
+		
+		//상대크기
+		w.resizeBy(20,-20);
+	}
+	
+	function winInformation() {
+		var infoTxt = "";
+		
+		//window 객체의 정보 얻어오기
+		//좌표구하기
+		infoTxt += "x좌표 = "+window.screenX +"<br/>";
+		infoTxt += "y좌표 = "+window.screenY +"<br/>";
+		
+		//윈도우의 폭과 높이
+		//여백,테두리,제목을 포함한 폭과 높이
+		infoTxt += "창 폭 = " + window.outerWidth + "<br/>";
+		infoTxt += "창 높이 = " + window.outerHeight + "<br/>";
+		
+		//여백,테두리,제목을 제외한 폭과 높이
+		infoTxt += "컨텐츠 폭= " + window.innerWidth + "<br/>";
+		infoTxt += "컨텐츠 높이 = " + window.innerHeight + "<br/>";		
+		
+		//body에 있는 여백도 포함되므로, 창폭이 생각보다 차이 있음!
+		
+		//screen 내장 객체
+		//작업표시줄을 포함한 폭과 높이 구하기
+		infoTxt += "screen 폭 = "+screen.width+"<br/>";
+		infoTxt += "screen 높이 = "+screen.height+"<br/>";
+		//1920 1080이어야하는데 노트북에서 125%쓰고 있어서 1536x864
+		
+		//작업표시줄을 제외하고 폭과 높이 구하기
+		infoTxt += "screen 폭 = "+screen.availWidth+"<br/>";
+		infoTxt += "screen 높이 = "+screen.availHeight+"<br/>";
+		
+		document.getElementById("winInfo").innerHTML = infoTxt;
+	}
+</script>
+</head>
+<body onload="winInformation()">
+<button onclick="winOpen()">윈도우 띄우기</button>
+<button onclick="winClose()">윈도우 닫기</button>
+<button onclick="winMove()">윈도우 이동</button>
+<button onclick="winResize()">윈도우 리사이즈</button>
+<div id="winInfo" style="border:1px soild pink"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	/*
+	$(document).ready(function() {
+		
+	});
+	
+	(document).ready 생략 가능
+	*/
+	
+	$(function() {
+		//선택자 : 태그, 아이디, 클래스
+		// css() : 스타일 설정 함수
+		//선택자	스타일설정
+		$("body").css("background-color","pink");
+		
+		//attr("속성명","속성내용");
+		//마지막에 실행되므로, 최종적으로 여기서 지정한 형태로 바뀜
+		$("#userid").attr("value","gildong");
+		//$("#userid").attr("type","password");
+		$('#userid').prop("readonly",true); //글 안써지게 함
+		
+		//img에게 폭, 높이, 보더
+		$("img").css('width','200px').css('height','250px').css('border','2px solid red');
+	
+		console.log($("#userid").prop("readonly")); //true
+		console.log($("#userid").attr("value")); //goguma
+	});
+</script>
+
+</head>
+<body>
+<input type="text" name="userid" id="userid"/><br/>
+<img src="../img/frog.png"/>
+</body>
+</html>

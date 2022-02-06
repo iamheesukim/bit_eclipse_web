@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<style>
+	.jumbotron>h1{
+		text-align:center;
+	}
+</style>
+</head>
+<body>
+<div class="container">
+<!-- 
+	.jumbotron : 회색 배경에 패딩, 내용이 위아래 센터에 있는 둥근 사각형
+ -->
+	<div class="jumbotron">
+		<h1>회색 배경에 패딩이 있는 둥근 사각형</h1>
+	</div>
+	<p class="jumbotron">
+		전 국민의 약 88%가 1인당 25만원씩 받는 코로나 상생 국민지원금(재난지원금) 지급 절차가 내달 6일부터 시작된다.
+1인 가구는 연소득 5천800만원 이하가 받게 돼 지난 6월 건강보험료가 17만원 이하면 지급 대상이다. 4인 가구는 직장 가입자 기준 외벌이는 31만원, 맞벌이는 39만원 이하여야 한다.
+지급 신청은 내달 6일부터 온라인, 내달 13일부터 오프라인으로 받으며 10월29일에 마감한다. 지원금은 신청 다음 날 지급되며 주소지 지역상품권 가맹점에서 12월31일까지 사용할 수 있다.
+정부는 30일 정부서울청사에서 이러한 내용의 국민지원금 대상자 기준과 신청·지급방법 등을 포함한 국민지원금 세부 시행계획을 발표했다.
+	</p>
+	
+	<!-- 
+		.table : 표의 위아래 줄 표시. padding.칸을 배분 정렬
+		.table table-hover : tbody에 마우스오버,아웃시 배경색 변경
+		.table table-striped : 줄단위 배경색
+		.table table-dark : 표의 배경을 어두운색으로 설정
+	 -->
+		<table class="table table-hover table-dark">
+		<thead>
+		<tr>
+			<td>번호</td>
+			<td>이름</td>
+			<td>주소</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>100</td>
+			<td>김준면</td>
+			<td>서울시 강남구</td>
+		</tr>
+		<tr>
+			<td>200</td>
+			<td>변백현</td>
+			<td>서울시 광진구</td>
+		</tr>
+		<tr>
+			<td>300</td>
+			<td>오세훈</td>
+			<td>서울시 종로구</td>
+		</tr>
+		<tr>
+			<td>400</td>
+			<td>도경수</td>
+			<td>서울시 마포구</td>
+		</tr>
+		<tr>
+			<td>500</td>
+			<td>김종인</td>
+			<td>서울시 송파구</td>
+		</tr>
+		<tr>
+			<td>600</td>
+			<td>김민석</td>
+			<td>서울시 영등포구</td>
+		</tr>
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="3">문의 사항은 02-7777-8888로 연락바랍니다.</td>
+		</tr>
+		</tfoot>
+	</table>
+	
+	<hr>
+	
+	<!-- 
+		색상명
+		*-primary : blue
+		*-success : green
+		*-danger : red
+		*-info : 청록색
+		*-warning : 노랑
+		*-active : 회색(웜
+		*-secondary : 회색(쿨
+	 -->
+	
+	<table class="table">
+		<thead>
+		<tr>
+			<td>번호</td>
+			<td>이름</td>
+			<td>주소</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="table-primary">
+			<td>100</td>
+			<td>김준면</td>
+			<td>서울시 강남구</td>
+		</tr>
+		<tr class="table-success">
+			<td>200</td>
+			<td>변백현</td>
+			<td>서울시 광진구</td>
+		</tr>
+		<tr class="table-danger">
+			<td>300</td>
+			<td>오세훈</td>
+			<td>서울시 종로구</td>
+		</tr>
+		<tr class="table-info">
+			<td>400</td>
+			<td>도경수</td>
+			<td>서울시 마포구</td>
+		</tr>
+		<tr class="table-warning">
+			<td>500</td>
+			<td>김종인</td>
+			<td>서울시 송파구</td>
+		</tr>
+		<tr class="table-active">
+			<td>600</td>
+			<td>김민석</td>
+			<td>서울시 영등포구</td>
+		</tr>
+		
+		<tr class="table-secondary">
+			<td>700</td>
+			<td>김민석2</td>
+			<td>서울시 영등포구2</td>
+		</tr>
+		
+		</tbody>
+		<tfoot>
+		<tr>
+			<td colspan="3">문의 사항은 02-7777-8888로 연락바랍니다.</td>
+		</tr>
+		</tfoot>
+	</table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	#i1, #i2, #i3{
+		width:100px; height:100px; border:1px solid red; position:absolute;
+	}
+	
+	#i1{background-color:orange;}
+</style>
+<script>
+	$(()=> {
+		//animate() : 객체를 이동한다
+		//							slow,fast,normal
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		
+		//				marginLeft marginTop
+		$('#i1').animate({marginLeft:'1000px',marginTop:'800px',opacity:0.3},2000)
+				//left1000 top800인 위치로 2초동안 움직임
+				.animate({margin:'1500px',marginTop:'10px',opacity:1},3000);
+		
+		$('#i2').animate({marginLeft:'1000px'},2000);
+		
+		//delay(): 출발지연
+		$('#i3').delay(2000).animate({marginLeft:'1200px',marginTop:'500px'},2000);
+		
+		$('#i1,#i2,#i3').mouseover(function() {
+			$(this).stop();//animate 중단
+		});
+
+	});
+</script>
+</head>
+<body>
+<div id="i1">ANIMATE</div>
+<img src="../img/com.jpg" id="i2"/><br/>
+<img src="../img/frog.png" id="i3"/>
+</body>
+</html>

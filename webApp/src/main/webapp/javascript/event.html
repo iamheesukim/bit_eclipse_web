@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!-- 0819-7 (6이랑 연결) -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{width:90%;}
+</style>
+<script>
+	//checked 상태일 때 쿠키를 저장하는 함수
+	function setEventCookie() {
+		//				checked=true / unchecked=false 이 자체가 t or f 로 나옴
+		var result = document.getElementById("chk").checked
+		
+		if(result) {//체크일때 (true)
+			//console.log("4444"); 확인용
+			
+			var now = new Date();
+			now.setDate(now.getDate()+1);
+			//				name	value	경로	기간
+			var cookieData = "event=test;path=/;expires="+now+";";
+			
+			//console.log(cookieData);
+			
+			document.cookie=cookieData; //쿠키저장
+			
+		}
+		
+		self.close(); //window.close();
+	}
+</script>
+</head>
+<body onresize="self.resizeTo(800,800);">
+<img src="../img/bbh.jpg"/><br/>
+<input type="checkbox" id="chk"/>하루동안 안보이기
+<input type="button" value="닫기" onclick="setEventCookie()"/>
+</body>
+</html>

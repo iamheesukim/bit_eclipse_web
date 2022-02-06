@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 
+   1.jquery-ui.css
+   2.jquery
+   3.jqyery-ui.js
+ -->
+
+<link rel="stylesheet" type="text/css" href="../jquery-ui.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="../jquery-ui.js"></script>
+<style>
+   #dialogOpen{
+      font-size:2em; background-color:#ffd; text-align:center;
+   }
+   #schedule {
+      text-align:center; font-size:1.5em; background-color:pink;
+   }
+
+</style>
+<script>
+   $(()=> {
+      //다이얼로그 열기
+      $('#dialogOpen').click(function() {
+         $('#dialog').dialog('open');
+      })
+      
+      //다이얼로그 설정
+      $('#dialog').dialog({
+         autoOpen : false // 실행 시 자동으로 다이얼로그를 열지 말지 - true, false
+         ,buttons: {
+        	 submit:function() {
+        		 var name=$('#event-name').val();
+        		 var date=$('#event-date').val();
+        		 
+        		 var result = '<p>'+date+' : '+name+"</p>";
+        		 $('#schedule').append(result);
+        		 
+        		 //현재 일정 지우기
+        		 $('#event-name').val('');
+        		 $('#event-date').val('');
+        	 },reset:function() {
+        		 $('#event-name').val('');
+        		 $('#event-date').val('');
+        	 },close:function() {
+        		 $('#event-name').val('');
+        		 $('#event-date').val('');
+        		 $('#dialog').dialog('close');
+        	 }
+         }//버튼
+      	,modal:true //창이 닫힐때 까지 공백있는 부분 표시안되는거.
+      	//다이얼로그 창 있으면 배경창 활성화X
+
+      });//dialog
+      
+      //날짜 입력박스 : datepicker 셋팅
+      $('#event-date').datepicker({
+    	  dateFormat:'yy년 mm월 dd일' //yy:4자리 y:2자리
+    	  ,numberOfMonths:3
+      
+      });
+         
+   });
+</script>
+
+</head>
+<body>
+<div id="dialogOpen"> 일정 등록 </div>
+<hr/>
+<div id="schedule"> 일정이 표시되는 곳 </div>
+
+<!-- 다이얼로그 창 만들기 -->
+<div id="dialog" title="일정등록화면">
+   <h1>일정을 등록하세요.</h1>
+   <label for="event-name">일정 이름:</label><input type="text" id="event-name"/><br/>
+   <label for="event-date">일정 날짜:</label><input type="text" id="event-date"/>
+</div>
+</body>
+</html>

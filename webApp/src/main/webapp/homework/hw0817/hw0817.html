@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color:#ececee;
+		margin : 0;
+	}
+	
+	body>div {
+		width:700px;
+		height : 1080px;
+		background-color:white;
+		margin : 0 auto;
+		padding-top:100px;
+		text-align : center;
+	}
+	
+		
+	a:link{text-decoration:none; color:black;}
+	a:visited{text-decoration:none; color:black;}
+	
+	footer a:link{text-decoration:none; color:gray; font-size:13px}
+	footer a:visited{text-decoration:none; color:gray; font-size:13px}
+	
+	img[src*=logo]{
+		width:185px;
+		margin-bottom:30px;
+	}
+	
+	img[src*=return]{
+		height:15px;
+	}
+	
+	img[src*=ad]{
+		width:425px;
+		margin-top:100px;
+		margin-bottom:40px;
+	}
+	
+	#return {
+		width : 180px;
+		text-align : right;
+		margin-left : 386px;
+	}
+	
+	form {
+		margin : 0 auto;
+		margin-bottom : 60px;
+	}
+	
+	input[type=text] {
+		width : 420px;
+		height : 45px;
+		margin : 5px;
+		border : 1px solid #ddd;
+		font-size: 15px;
+		color : gray;
+	}
+	
+	input[type=text]:focus {
+		border:#5b94fd;
+		background-color:#ddebff;
+	}
+	
+	button {
+		width : 425px;
+		height:60px;
+		background-color:#4c87ee;
+		color:white;
+		font-size:20px;
+		border:0px;
+		margin:5px;
+	}
+	
+	input[type=checkbox] {
+		width:18px;
+		height:18px;
+	}
+	
+	#option {
+		width : 423px;
+		margin : 0 auto;
+		text-align : right;
+	}
+	
+	#check {
+		float:left;
+	}
+	
+	#ip {
+		float:right;
+	}
+	
+	#ip>input {
+		display:none;
+	}
+
+	footer{
+		color : gray;
+	}
+	
+	#onoff {color:blue;}
+
+</style>
+<script>
+	function onoffchange() {
+		var i = document.getElementById("onoff");
+		if(i.innerHTML=="ON") {
+			i.style.color="black";
+			i.innerHTML="OFF";
+		}
+		else {
+			i.style.color="blue";
+			i.innerHTML="ON";
+		}
+
+	}
+	
+</script>
+</head>
+<body>
+	<div>
+		<a href="https://www.daum.net/"><img src="logo.png"/></a>
+		<a href="https://accounts.kakao.com/login?continue=https%3A%2F%2Flogins.daum.net%2Faccounts%2Fksso.do%3Frescue%3Dtrue%26url%3Dhttps%253A%252F%252Flogins.daum.net%252Faccounts%252Fsigninform.do%253Furl%253Dhttps%25253A%25252F%25252Fwww.daum.net%25252F">
+		<div id="return"><img src="return.png"/> 다른 방법으로 로그인</div>
+		</a>
+		<form>
+			<input type="text" id="userid" placeholder="아이디"/><br/>
+			<input type="text" id="userpwd" placeholder="비밀번호"/><br/>
+			<button><b>로그인</b></button><br/>
+			
+			<div id="option">
+				<div id="check"><input type="checkbox" name="loginmode" id="m1"><label for="m1"><b>로그인 상태 유지</b></label></div>
+				<div id="ip"><input type="checkbox" name="ipmode" id="m2"><label for="m2"><a href="https://logins.daum.net/accounts/loginform/popup/ipsecuritysettingform.do" target="_blank"><b>IP보안 </b></a><b id="onoff" onclick="onoffchange();">ON</b></label></div>
+			</div>
+		</form>
+		
+		<div>
+			<a href="https://member.daum.net/find/id.do?action=home">아이디 찾기</a>　|　<a href="https://member.daum.net/find/password.do">비밀번호 찾기</a>
+		</div>
+		<a href="https://accounts.daum.net/integration/start?rtnUrl=https://www.daum.net?fromdac=pc_login_banner"><img src="ad.jpg"/></a>
+		
+		<hr>
+		
+		<footer>
+			<a href="http://www.kakaocorp.com/">&copy; Kakao Corp.</a>　|　<a href="https://cs.daum.net/faq/59/14970.html">고객센터</a>
+		</footer>
+	</div>
+
+</body>
+</html>

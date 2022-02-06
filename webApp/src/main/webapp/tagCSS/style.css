@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*
+선택자 {속성:속성값; 속성:속성값;,,,,}
+태그,아이디,클래스
+*/
+
+h1,li{
+	color:red;
+}
+
+/*
+	a태그에 스타일 적용하기
+	
+	a:link -> 링크가 걸린 상태일 때
+	a:visited -> 방문한 홈페이지일 때
+	a:hover -> 링크 주소에 마우스 오버했을 때
+	a:active -> 링크에 마우스를 누른 상태일 때
+	
+	text-decoration 속성 -> 밑줄(underline), 윗줄(overline), 취소선(linethrough), 선없음(none)
+	
+*/
+a:link{text-decoration:none; color:#555;}
+a:visited{text-decoration:none; color:#555;}
+a:hover{text-decoration:underline; color:green; font-weight:bold;}
+a:active{color:orange;}

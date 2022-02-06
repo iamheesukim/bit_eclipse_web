@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--  0809-4 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	textarea{width:500px;height:100px;}
+</style>
+</head>
+<body>
+<!-- 
+	method 속성 : 데이터 전송방식
+				get : 주소표시줄에 변수와 데이터가 표시된다.
+				post : 데이터를 숨겨서 서버로 가져간다.
+ -->
+
+<form method="post" action="aaaa.jsp">
+	<!--  한줄의 문자열을 입력하는 컴포넌트 : 이름 아이디 주소 주민번호 전화번호 이메일 글제목...
+	readonly -->
+	<label>아이디</label> : <input type="text" name="userid" id="userid" maxlength="10" placeholder="아이디입력" disabled/><br/>
+	<label>이름</label> : <input type="text" name="username" id="username" value="홍길동"/><br/>
+	<label>비밀번호</label> : <input type="password" name="userpwd" id="userpwd"/><br/>
+	<label>파일첨부</label> : <input type="file" name="filename" id="filename"/><br/>
+	
+	<label>관심분야</label> : <input type="checkbox" name="intro" value="배구"/>배구
+							<input type="checkbox" name="intro" value="농구" checked/>농구
+							<input type="checkbox" name="intro" value="축구"/>축구<br/>
+							<!-- 사용자에게 보이는건 배구, 서버에서 넘어가는건 value값! -->
+							
+	<label>성별</label> : <input type="radio" name="gender" value="M" checked/>남자
+						<input type="radio" name="gender" value="F"/>여자
+						<!-- name이 같아야 그룹화가 됨 -->
+						
+	<h2>여러줄의 텍스트를 입력하는 박스</h2>
+	자기소개 : <textarea name="txt">여기가 value~ 여기에 쓰면 기본 셋팅~</textarea><br/>
+	
+	<!--  select, option, optiongroup 태그
+		size
+		multiple
+		selected
+		 -->
+	콤보박스 : <select name="comList" size="5" multiple>
+			<!-- size 없으면 일반 콤보박스 -->
+				<option value="java">자바</option>
+				<option value="javascript">자바스크립트</option>
+				<option value="html">HTML</option>
+				<option value="css">스타일시트</option>
+				<option value="spring">스프링</option>
+			</select><br/>
+			
+	리스트group : <select name="comList2">
+			<!-- size 없으면 일반 콤보박스 -->
+				<optgroup label="프론트엔드">
+					<option value="javascript">자바스크립트</option>
+					<option value="html">HTML</option>
+					<option value="css" selected>스타일시트</option>
+				</optgroup>
+				<optgroup label="백엔드">
+					<option value="spring">스프링</option>
+					<option value="java">자바</option>
+				</optgroup>
+			</select><br/>
+	
+	<!--  -->
+	<input type="submit" value="등록"/>
+	<input type="button" value="등록"/>
+	<input type="image" src="../img/do2.png"/>
+	<input type="reset" value="다시쓰기"/>
+	
+	<hr/>
+	<!-- date -->
+	date : <input type="date" name="date1" /><br/>
+	datetime-local : <input type="datetime-local" name="time1"/><br/>
+	month : <input type="month" name="m1"/><br/>
+	week : <input type="week" name="w1"/><br/>
+	color : <input type="color" name="c1"/><br/>
+	number : <input type="number" name="num" min="-10" max="10" step="2"/><br/>
+	range : <input type="range" name="ran1" min="1" max="100" value="50"/><br/>
+</form>
+
+</body>
+</html>

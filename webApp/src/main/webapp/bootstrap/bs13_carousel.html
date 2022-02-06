@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<style>
+	.carousel-inner img{width:100%; height:600px;}
+</style>
+</head>
+<body>
+<div class='container'>
+	<div id='slideImg' class='carousel slide' data-ride='carousel' data-interval='1000'>
+		<!-- 아이콘 -->
+		<ul class='carousel-indicators'>
+			<li data-target='#slideImg' data-slide-to='0' class='active'></li>
+			<li data-target='#slideImg' data-slide-to='1'></li>
+			<li data-target='#slideImg' data-slide-to='2'></li>
+		</ul>
+		
+		<!-- 슬라이딩 이미지 목록 -->
+		<div class='carousel-inner'>
+			<!-- ==1== -->
+			<div class='carousel-item active'>
+				<img src='../img/frog.png'/>
+				<!-- 이미지 위의 설명 -->
+				<div class='carousel-caption'>
+					<h2>LA</h2>
+					<p>귀여운 개구리 커밋</p>
+				</div>
+			</div>
+			
+			<!-- ==2== -->
+			<div  class='carousel-item'>
+				<img src='../img/bbh.jpg'/>
+				<!-- 이미지 위의 설명 -->
+				<div class='carousel-caption'>
+					<h2>LA22</h2>
+					<p>백현이가 귀여운걸까 몽룡이가 귀여운걸까 'ㅅ'</p>
+				</div>
+			</div>
+			
+			<!-- ==3== -->
+			<div class='carousel-item'>
+				<img src='../img/star.jpg'/>
+				<!-- 이미지 위의 설명 -->
+				<div class='carousel-caption'>
+					<h2>LA33</h2>
+					<p>우주의 별이</p>
+				</div>
+			</div>
+			
+			<!-- 좌우 이동 버튼 -->
+			<a href="#slideImg" class='carousel-control-prev' data-slide='prev'><span class='carousel-control-prev-icon'></span></a>
+		    <a href="#slideImg" class='carousel-control-next' data-slide='next'><span class='carousel-control-next-icon'></span></a>
+	
+		</div> <!-- 슬라이드 이미지 목록 -->
+	</div> <!-- 슬라이드 -->
+</div> <!-- container -->
+</body>
+</html>

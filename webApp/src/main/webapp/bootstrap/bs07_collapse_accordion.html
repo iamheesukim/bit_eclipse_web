@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+<style>
+	img{width:100px; height:100px;}
+</style>
+</head>
+<body>
+<!--
+	show를 적어주면 처음에 보이는것부터 시작
+	안적으면 안보임
+-->
+<h1>Collapse 예</h1>
+<!-- 버튼을 클릭하면 이미지가 접혔다펼쳤다 하는 기능 -->
+<button class='btn btn-success' data-target='#view1' data-toggle='collapse'>클릭하세요</button>
+<div id='view1' class='collapse show'>
+	<img src='../img/tan.jpg'/>
+</div>
+
+<hr/>
+<button class='btn btn-primary' data-target='#view2' data-toggle='collapse'>클릭하면 내용나오기</button>
+<div id='view2' class='collapse show'>
+	* 8세 이상 관람가 (2014년 12월 31일 이전 출생자 관람 가능)
+- 8세 미만 미취학 아동의 경우 티켓 유무, 보호자 동반 유무와 관계없이 입장 불가합니다.
+초등학생의 경우 생년월일이 확인 가능한 증빙자료로 나이 확인 후 입장이 가능하며,
+육안으로 나이 확인은 불가하오니 티켓 수령 시 미리 준비해 주시기 바랍니다.
+이와 관련 공연 당일 현장 취소/변경/환불은 불가 하오니 예매 시 유의 바랍니다.
+</div>
+
+<hr/>
+
+<h1>Accordion 예</h1>
+<div id='accordion'>
+	<div class='card'>
+		<div class='card-header' data-target='#a1' data-toggle='collapse'>아코디언 적용 예제 111</div>
+		<div class='collapse' id='a1'>
+* 8세 이상 관람가 (2014년 12월 31일 이전 출생자 관람 가능)
+- 8세 미만 미취학 아동의 경우 티켓 유무, 보호자 동반 유무와 관계없이 입장 불가합니다.
+초등학생의 경우 생년월일이 확인 가능한 증빙자료로 나이 확인 후 입장이 가능하며,
+육안으로 나이 확인은 불가하오니 티켓 수령 시 미리 준비해 주시기 바랍니다.
+이와 관련 공연 당일 현장 취소/변경/환불은 불가 하오니 예매 시 유의 바랍니다.
+		</div>
+	</div>
+	
+	<div class='card'>
+		<div class='card-header' data-target='#a2' data-toggle='collapse'>아코디언 적용 예제 222</div>
+		<div class='collapse' id='a2'>
+			<img src='../img/bbh.jpg'/>
+		</div>
+	</div>
+	
+	<div class='card'>
+		<div class='card-header' data-target='#a3' data-toggle='collapse'>아코디언 적용 예제 333</div>
+		<div class='collapse' id='a3'>
+~관람일 10일전까지 : 뮤지컬/콘서트/클래식 장당 4,000원, 연극/전시 등 장당 2,000원 (단, 최대 티켓금액의 10% 한도)
+관람일 9일전~관람일 7일전까지 : 티켓금액의 10%
+관람일 6일전~관람일 3일전까지 : 티켓금액의 20%
+관람일 2일전~관람일 1일전까지 : 티켓금액의 30%
+		</div>
+	</div>
+</div>
+</body>
+</html>

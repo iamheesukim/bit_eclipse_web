@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--0813-6 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{margin:0px;}
+	ul,li {margin:0; padding:0; list-style-type:none;} /*ul은 기본 여백이 있음*/
+	header{height:50px; background-color:yellow; width:800px; margin:0 auto;}
+	nav{height:40px; background-color:green;}
+	nav li{float:left; color:white; line-height:40px; width:25%; text-align:center;}
+	nav>ul{width:800px; height:40px; margin:0 auto;}
+	section{
+			width:800px; margin:0 auto; height:2000px; background-color:#ddd;
+			position:relative;
+	}
+	footer{height:100px; background-color:orange;}
+	
+	#leftBanner, #rightBanner {
+		width:100px; height:200px; background-color:pink;
+		position:absolute;
+		top:0px;
+	}
+	
+	#leftBanner{
+		left:-100px;
+	}
+	#rightBanner{
+		left:800px;
+	}
+	
+</style>
+<script>
+	function bannerTopSetting() {
+		//스크롤바의 top좌표를 구하여 배너의 top좌표를 셋팅
+		var scrollTop = window.scrollY; //스크롤바의 위치
+		var bannerTop = scrollTop-90; //배너의 top좌표
+		
+		if(scrollTop<=90) {
+			bannerTop = 0;
+		}
+		
+		document.getElementById("leftBanner").style.top=bannerTop+"px";
+		document.getElementById("rightBanner").style.top=bannerTop+"px";
+	}
+</script>
+</head>
+<body onscroll="bannerTopSetting()">
+
+	<header></header>
+
+	<nav>
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+			<li>메뉴4</li>
+		</ul>
+	</nav>
+
+	<section>
+		<img src="../../img/do2.png"/>
+		<div id="leftBanner"></div>
+		<div id="rightBanner"></div>
+	</section>
+
+	<footer></footer>
+</body>
+</html>

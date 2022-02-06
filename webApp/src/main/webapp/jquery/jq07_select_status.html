@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+   $(()=>{
+      // 상태 선택자
+      
+      // 속성값이 text인 것을 선택하라
+      $(':text').css('background-color','pink');
+      
+      //prop : 속성은 있는데 값이 없는 경우 ('속성',t or f or 아무것도없)
+      $(':checked').prop('checked',false); //선택해제
+      $(':selected').prop('selected',true);
+      
+      // 컨텐츠 선택자
+      //contains() : 특정 문자를 포함한 경우 선택
+      $('p:contains("올해")').css('background-color','pink');
+      
+      //has() : 특정 태그가 포함된 경우 선택
+      $('p:has("b")').css('color','blue');
+      
+      //not() : 특정선택자를 제외한 나머지를 선택
+      $('p:not(":first")').css('border','2px solid red');
+      
+      //closest() : 조상선택자
+      $('i').closest('body').css('border','2px dotted orange');
+      
+      //filter() : p태그와 c1인 것 (= p.c1)
+      $('p').filter('.c1').css('background-color','#000').css('color','yellow');
+      
+      //contents() : 선택자가 다른 태그를 포함한 경우 선택한다.
+      $('p').contents().css('color','red').css('font-size','2em');
+      
+      //selectedIndex() : select태그의 목록에서 선택된 목록의 index를 구한다
+      $('#username').val( $('#site').prop('selectedIndex'));
+      //username에 site에서 선택된 index(2) 값이 들어가짐
+   });
+</script>
+</head>
+<body>
+<div>
+   <p>대규모 추경까지 반영한 올해 <b>예산규모 604조7천억원을</b>> 웃도는 수치로, 적극적인 확장 재정정책을 이어가겠다는 의지를 드러낸 것으로 보인다.</p>
+   <p class="c1">집합금지 업종에 속한 저신용 소상공인에게는 긴급경영개선자금을 지원하는 등 금융지원 대책도 함께 마련하기로 했다.</p>
+   <p class="c2">이어 "올해 본예산과 추경을 모두 합하면 <i>604조9천억원이다.</i> 그래서 정부에 기본적으로 이 정도는 내년 예산안에 담을 것을 요청했던 게 사실"이라며 "정부는 604조원 전후로 편성했을 것"이라고 말했다.</p>
+</div>
+<div>
+   <form>
+      <label>이름</label>
+      <input type="text" name="username" id="username"/><br/>
+      
+      <label>연락처</label>
+      <input type="text" name="tel" id="tel"/><br/>
+      
+      <label>사용자 동의 여부</label>
+      <input type="radio" name="accept" id="yes"/> 동의
+      <input type="radio" name="accept" id="no"  checked/>동의 안 함<br/>
+      
+      <label>자주 가는 사이트</label>
+      <select name="site" id="site">
+         <option value="not">직접입력</option>
+         <option value="daum">daum.net</option>
+         <option value="nate" selected>nate.com</option>
+         <option value="naver">naver.com</option>
+         <option value="">google.com</option>
+      </select>
+      
+   </form>
+</div>
+</body>
+</html>

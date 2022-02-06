@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(function() {
+		$('div:eq(0)').css('border','5px solid red');
+		$('div:gt(0)').css('width','300px').css('height','350px').css('background-color','lightblue').css('border','5px solid gray');
+		$('div:nth-child(3)').css('position','absolute').css('right','10px').css('bottom','20px').css('margin','50px').css('padding','30px').css('background-color','pink');
+	
+		//수치 조작 메소드
+		//html(), text()
+		//append() : 선택자 내의 내용을 유지하면서 끝에 추가하기
+		$('div').eq(2).append("<h2>Append로 추가된 내용</h2>");
+		
+		//객체의 폭과 높이
+		//width(), height() : margin, padding, border을 제외한 폭과 높이를 구함
+		var w = $('div:eq(1)').width();
+		var h = $('div:eq(1)').height();
+		$('div').eq(2).append("<h3>1폭:"+w+", 1높이:"+h+"</h3>");
+		
+		var w2 = $('div').eq(2).width();
+		var h2 = $('div').eq(2).height();
+		$('div').eq(2).append("<h3>2폭:"+w2+", 2높이:"+h2+"</h3>");
+		
+		//innerWidth(), innerHeight() : padding을 포함하여 폭과 높이를 구함
+		var w3 = $('div').eq(2).innerWidth();
+		var h3 = $('div').eq(2).innerHeight();
+		$('div').eq(2).append("<h3>inner폭:"+w3+", inner높이:"+h3+"</h3>");
+		
+		//outerWidth(), outerHeight() : border,padding을 포함하여 폭과 높이를 구함
+		var w4 = $('div').eq(2).outerWidth();
+		var h4 = $('div').eq(2).outerHeight();
+		$('div').eq(2).append("<h3>outer폭:"+w4+", outer높이:"+h4+"</h3>");
+		
+		//appendTo() : -------------------------------------
+		/*
+			$(선택자).append(추가할내용);
+			$(추가할 내용).appendTo(선택자);
+		*/
+		
+		//position() : left, top의 좌표를 구한다. (margin을 포함하여 구한다.) 값은 화면에 따라 다름
+		$('<h3>left->'+$('div:last').position().left+'<br/> top->'+ $('div:last').position().top+'</h3>').appendTo('div:last');
+		   
+		//offset() : left, top 좌표를 구한다. (margin, border를 제외하여 구한다.) 값은 화면에 따라 다름
+		$('<h3>left->'+$('div:last').offset().left+'<br/> top->'+ $('div:last').offset().top+'</h3>').appendTo('div:last');
+	
+		//스크롤바의 위치 구하기
+		//scrollTop():상하, scrollLeft():좌우
+		//0으로 나옴 ㅠㅠ
+		$("div:first").append("scrollTop-->"+$(window).scrollTop());
+		$("div:first").append("scrollLeft-->"+$(window).scrollLeft());
+		
+	});
+</script>
+</head>
+<body>
+<div>수치 조작 메소드</div>
+<div><h2> 123456</h2></div>
+<div>ABCD</div>
+</body>
+</html>

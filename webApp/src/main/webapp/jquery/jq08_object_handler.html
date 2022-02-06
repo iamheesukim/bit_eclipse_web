@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(() => {
+		// html() : 특정객체에 html 태그를 추가한다. => innerHTML
+		var tag = '<a href="https://www.daum.net">다음으로 가기</a>';
+		
+		$('#daum').html(tag);
+		
+		console.log( $('#daum').html() );
+		
+		/// text() : 특정 객체의 내용을 문자로 추가한다.
+		var tag2 = "문자로 추가된 <b>내용</b>이다.";
+		
+		$('h2').children('a').text(tag2); //$('h2>a')
+		//text(tag) 라면, 웹에 보여지는 글 자체가 '<a hr..>'이런 식으로 태그가 적용안되고, 글자 그 자체로 인식
+		
+		//h2>a의 href="https://www.nate.com"
+		$('h2>a').attr('href','https://www.nate.com');
+		
+		//removeAttr() : 속성 지우기
+		$('a').removeAttr('href');
+	});
+</script>
+
+</head>
+<body>
+<h1 id="daum">객체조작 1</h1>
+<h2><a href="">객체조작 2</a></h2>
+<div id="result"></div>
+</body>
+</html>

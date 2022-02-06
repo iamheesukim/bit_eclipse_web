@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+   $(()=>{
+      
+      $('h1').click(function(){
+            //비 동기식으로 서버에 접속하여 정보가져오기 'ajax_test.txt' 파일에 있는 내용을 가져와서 보여줌
+         $('#result').load('ajax_test.txt');
+      });
+   });
+</script>
+</head>
+<body>
+<h1>jquery에서 ajax로 text내용 가져오기</h1>
+<div id="result"></div>
+</body>
+</html>

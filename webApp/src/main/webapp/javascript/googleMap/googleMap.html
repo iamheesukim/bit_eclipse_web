@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#map{width:100%; height:700px; border:1px solid gray;}
+</style>
+
+<!-- 구글맵을 사용하기 위해서는 구글에서 제공하는 자바스크립트 api가 필요하다 -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIt_Stq2QW_15wVds7sVrxA9y0Cadru1s&callback=initMap">
+</script>
+
+<script>
+	// https://cloud.google.com/maps-platform/
+	// https://maps.googleapis.com
+	// https://developers.google.com/maps/documentation/javascript/webgl
+	
+	//위도, 경도
+	var latitude = 37.566379;
+	var longitude = 126.977916;
+	
+	function initMap() {
+		//지도의 중심을 위도경도 객체를 구한다
+		var myCenter = new google.maps.LatLng(latitude, longitude);
+										
+		//지도를 그릴때 필요한 기타정보를 JSON 형식의 데이터로 생성
+		var mapProperty = {
+				center : myCenter,
+				zoom : 14, //0~21까지의 값을 사용한다. 숫자가 클수록 확대된다.
+				mapTypeId : google.maps.MapTypeId.ROADMAP//지도 종류 (ROADMAP, HYBRID, STEELITE, TERRAIN )
+		};
+		
+		//								지도를 표시할 곳
+		var map = new google.maps.Map(document.getElementById("map"),mapProperty);
+		
+		//마커표시
+		var marker = new google.maps.Marker( {
+			position : myCenter, //마커의 위치
+			map : map, //마커를 표시할 맵
+			title : '마커에 표시될 내용',
+			icon : 'gmap_pin.png' // 마커로 표시할 이미지
+		});
+		
+
+		//마커 클릭시 표시할 내용 만들기
+		var information = "위도:"+latitude+", 경도"+longitude;
+		information += "<br/><img src='../../img/delight.png' width='50' height='50'/>";
+		var info = new google.maps.InfoWindow({content:information});
+		
+		//마커를 이벤트 등록				이벤트객체	이벤트종류						지도		마커
+		google.maps.event.addListener(marker,"click",function(){info.open(map,marker)});
+	
+		//반경 표시
+		var myCircle = new google.maps.Circle({
+			center:myCenter,
+			radius:1000, //반경 1000m
+			strokeColor:'#0f0', //반경선의 색상
+			strokeOpacity:0.3, //선의 투명도 (0~1)
+			strokeWidth:3, //선의 두께
+			fillColor:'#00f', //배경색
+			fillOpacity:0.3 //배경의 투명도
+		});
+		
+		myCircle.setMap(map);
+	}
+</script>
+
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>

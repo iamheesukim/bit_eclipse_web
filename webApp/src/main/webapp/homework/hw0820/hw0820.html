@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	ul { margin:0; padding:0; list-style-type:none;} /*ul은 기본 여백이 있음*/
+	header{height:50px; background-color:yellow; width:800px; margin:0 auto;}
+	nav{height:40px; background-color:green;}
+	nav li{float:left; color:white; line-height:40px; width:25%; text-align:center;}
+	nav>ul{width:800px; height:40px; margin:0 auto;}
+	section{
+			width:800px; margin:0 auto; height:3000px; background-color:#ddd;
+			position:relative;
+	}
+	footer{height:100px; background-color:orange;}
+	
+	#leftBanner, #rightBanner {
+		background-color:pink;
+		width:100px; height:200px; ;
+		position:absolute;
+	}
+	
+	#leftBanner{
+		left:-100px;
+	}
+	
+	#rightBanner{
+		left:800px;
+	}
+	
+	section>div {
+		height : 200px; width : 800px;
+		margin : 0 auto;
+		position : sticky;
+		top:0;
+	}
+	
+</style>
+</head>
+<body>
+
+	<header></header>
+
+	<nav>
+		<ul>
+			<li>메뉴1</li>
+			<li>메뉴2</li>
+			<li>메뉴3</li>
+			<li>메뉴4</li>
+		</ul>
+	</nav>
+
+	<section>
+		<div>
+			<div id="leftBanner"></div>
+			<div id="rightBanner"></div>
+		</div>
+	</section>
+
+	<footer></footer>
+</body>
+</html>

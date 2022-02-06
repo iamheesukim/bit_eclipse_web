@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container"><!-- list 만드는걸ul로 만든거다. -->
+   <h1>ul 태그를 이용한 목록 만들기</h1>
+   <ul class='list-group'> <!-- ul class='list-group ul의 패딩이 없어짐 -->
+      <li class='list-group-item'><a href="#">제약회사 화이자가 이르면 올해 늦가을 만 5세~11세를 대상으로 한 코로나19 백신 긴급사용 승인을 받을 것으로 전망했다.</a></li>
+      <li class='list-group-item list-group-item-primary'><a href="#">통상적으로 FDA가 긴급승인 신청을 받은 뒤 4~6주가량 검토 시간을 거쳐 승인 여부를 결정한다는 이유에서다.</a></li>
+      <li class='list-group-item'><a href="#">모더나도 전 연령을 대상으로 정식 승인을 신청한 상태이며, 존슨앤드존슨(J&J)의 얀센 백신은 아직 정신 승인을 신청하지 않았다</a></li>
+      <li class='list-group-item'><a href="#">미국에선 가을 학기 개학을 맞으면서 아동·청소년 백신 접종에 대한 요구가 높아지고 있다. 어린이 중증 감염자 수도 증가하면서 필요성은 더욱 커지고 있다.</a></li>
+      
+   </ul>
+   <!-- a태그는 margin paddin이 잘안먹음 100프로 블럭 잡는게 아니다. -->
+   <h1>a 태그를 이용한 목록 만들기</h1>
+   <div class="list-group">
+      <a href="#" class="list-group-item">가나다라</a>
+      <a href="#" class="list-group-item">가나다라</a>
+      <a href="#" class="list-group-item list-group-item-warning">가나다라</a>
+      <a href="#" class="list-group-item-info">가나다라
+         <h2>미니미닌</h2>
+         <p>국내에 150대만 한정 판매되며,가격은 3310만원이다</p>
+      </a>
+   </div>
+   <h1>div태그를 이용한 목록 만들기</h1>
+   <div class="list-group">
+      <div class="list-group-item">제약회사 화이자가 이르면 올해 늦가을 만 5세~11세를 대상으로 한 코로나19 </div>
+      <div class="list-group-item list-group-item-info">통상적으로 FDA가 긴급승인 신청을 받은 뒤 4~6주가량 검토 시간을 거쳐</div>
+      <div class="list-group-item">국에선 가을 학기 개학을 맞으면서 아동·청소년 백신 접종에 대한 요구가 높아지</div>
+      <div class="list-group-item">어린이 중증 감염자 수도 증가하면서 필요성은 더욱 커지고</div>
+   </div>
+</div>
+</body>
+</html>

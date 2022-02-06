@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> <!-- js기준 여기가 document -->
+<ul>
+	<li id="first">첫번째</li>
+	<li>두번째</li>
+</ul>
+
+<img src="../img/dftf.png" id="i1"/>
+
+<script>
+	//자바스크립트에서 스타일시트 적용하기
+	
+	//font-size -> fontSize
+	document.getElementById("first").style.backgroundColor="pink";
+	//document.getElementById("i1").style.border="3px solid red";
+	
+	//태그 자체를 변수를 선언해서 사용해도 됨
+	var i = document.getElementById("i1"); //<img src="../img/dftf.png" id="i1"/> 이거임
+	i.style.border="3px solid red";
+	
+	//html 태그의 속성을 제어한다.
+	i.src="../img/frog.png";
+	i.title="풍선도움말";
+	
+	//li 태그 내의 내용 변경
+	document.getElementById("first").innerHTML="<img src='../img/com.jpg'/>";
+	
+	
+	
+</script>
+</body>
+</html>

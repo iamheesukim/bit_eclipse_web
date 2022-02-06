@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- 0820-1 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#container {
+		width: 1000px;
+		margin: 0 auto;
+	}
+	
+	#container img {
+		width: 100%;
+	}
+	
+	/* 공지사항 */
+	#notice {
+		position: absolute;
+		top: 300px;
+		left: 300px;
+		width: 400px;
+		height: 400px;
+		border: 1px solid #ddd;
+		box-sizing: border-box;
+		background-color: #fff;
+		overflow: hidden;
+	}
+	
+	#title {
+		height: 50px;
+		float: left;
+		width: 95%;
+		background-color:#ddd;
+	}
+	
+	#divClose {
+		height: 50px;
+		float: left;
+		width: 5%;
+		cursor: default;
+	}
+	
+	.contents {
+		clear: both;
+	}
+</style>
+<script>
+	// 팝업 위치 구하기
+	function setDivXY() {
+		// div의 style에서 지정 left, top값을 인식하지 못 한다.
+		document.getElementById("notice").style.left = "300px";
+		document.getElementById("notice").style.top = "300px";
+	}
+
+	// title 클릭하면
+	var eventX, eventY, divLeft, divTop, moveX, moveY;
+	function divMoveStart() {
+		// div의 left, top
+		var notice = document.getElementById("notice").style;
+		divLeft = parseInt(notice.left); // 300px ---> 300 //자바스크립트는 첫문자가 숫자로 시작하면 형변환 시 자동으로 숫자만 빼서 형변환해줌.
+		divTop = parseInt(notice.top);
+
+		// 마우스 클릭한 위치의 x, y좌표
+		eventX = event.clientX;
+		eventY = event.clientY;
+
+		// 클릭한 상태에서 마우스를 이동하면 divDrag() 함수 호출하느 이벤트를 등록한다.
+		document.onmousemove = divDrag; // 여긴 매개변수 안 써도 됨
+
+		flag = true;
+		console.log(divLeft, divTop, eventX, eventY);
+	}
+
+	// 클릭한 상태에서 마우스를 이동하면
+	function divDrag() {
+		if (flag) {
+			// 이동한 곳의 마우스 x, y 좌표 구하기
+			moveX = event.clientX;
+			moveY = event.clientY;
+
+			var x = moveX - eventX;
+			var y = moveY - eventY;
+
+			var left = divLeft + x;
+			var top = divTop + y;
+
+			var notice = document.getElementById("notice");
+			notice.style.left = left + "px";
+			notice.style.top = top + "px";
+		}
+
+	}
+
+	//마우스 놓을 때
+	function setFlag() {
+		flag = false;
+	}
+
+	// 팝업 닫기
+	function noticeDivClose() {
+		document.getElementById("notice").style.display = "none";
+	}
+</script>
+</head>
+<body onload="setDivXY()">
+	<div id="container">
+		<img src="../img/do2.png" />
+	</div>
+	<!-- div로 공지사항 만들기 -->
+	<div id="notice">
+		<div>
+			<div id="title" onmousedown="divMoveStart()" onmouseup="setFlag()">제목</div>
+			<div id="divClose" onclick="noticeDivClose()">X</div>
+		</div>
+		<div class="contents">
+			<img src="../img/frog.png" width="100%" />
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

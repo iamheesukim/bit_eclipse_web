@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- 0817-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	function mathTest() {
+		//수학함수
+		var n = 123.567;
+		
+		document.write("pi->"+Math.PI);
+		
+		document.write("<br/>pow->"+Math.pow(3,4)); // 3의 4승
+		document.write("<br/>sqrt->"+Math.sqrt(10)); //루트
+		
+		//절대값 반올림 올림 내림
+		document.write("<br/>abs->"+Math.abs(-88));
+		document.write("<br/>round->"+Math.round(n));
+		document.write("<br/>ceil->"+Math.ceil(n));
+		document.write("<br/>floor->"+Math.floor(n));
+		
+		//최대 최소
+		document.write("<br/>max->"+Math.max(85,4,56,87,4,64,859,54));
+		document.write("<br/>min->"+Math.min(85,4,56,87,4,64,859,54));
+		
+		//난수
+		document.write("<br/>random->"+Math.random()); //0~1 사이 값
+
+	}
+	
+	//함수호출
+	mathTest();
+
+
+</script>
+
+</head>
+<body onload="">
+<!--
+onload : 모든 프로그램 실행이 끝나면 실행됨.
+아예 초기화되고 실행됨.
+
+따라서 함수호출도 하고 onload도 하면, math는 보이는데 img가 안보임	
+-->
+<img src="../img/do2.png"/>
+
+</body>
+</html>

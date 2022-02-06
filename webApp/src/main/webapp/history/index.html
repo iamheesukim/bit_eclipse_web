@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- 0820-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+	history 내장 객체
+	
+	history.back() : 이전페이지
+	history.forward() : 다음페이지
+	history.go(n) : 숫자를 이용하여 페이지 이동
+					+다음페이지 -이전페이지
+	history.length : history 갯수
+	*/
+	
+	document.write("history->"+history.length+"<hr/>");
+</script>
+</head>
+<body>
+<a href="A1_red.html">A1_red.html</a>
+<a href="A2_pink.html">A2_pink.html</a>
+<a href="A3_lightblue.html">A3_lightblue.html</a>
+<hr/>
+<input type="button" value="전전페이지" onclick="history.go(-2)"/>
+<input type="button" value="전페이지" onclick="history.back()"/> <!-- go(-1) -->
+<input type="button" value="다음페이지" onclick="history.forward()"/>
+<input type="button" value="다다음페이지" onclick="history.go(2)"/>
+</body>
+</html>

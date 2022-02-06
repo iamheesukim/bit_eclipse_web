@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 0818-6 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function scrollTest() {
+		//스크롤바 이동하기
+		
+		//절대 위치로 이동
+		//				x좌우, y상하
+		//window.scrollTo(100,200);
+		
+		//상대 위치로 이동
+		//				x+-	y+-
+		window.scrollBy(0,20);
+		
+		var top = window.scrollY;
+		var left = window.scrollX;
+		
+		document.getElementById("r").innerHTML = "top="+top+"<br/>left="+left;
+		
+	}
+</script>
+</head>
+<body>
+<img src="../tagCSS/glass/glass1.gif"/><button onclick="scrollTest()">클릭하세요</button><br/>
+<div id="r"></div>
+<img src="../tagCSS/glass/glass2.gif"/><br/>
+<img src="../tagCSS/glass/glass3.gif"/><br/>
+<img src="../img/back.jpg"/>
+
+</body>
+</html>

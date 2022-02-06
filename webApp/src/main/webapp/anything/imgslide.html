@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	body,img,div{padding:0; margin:0}
+	#imgbox>img {
+		width:500px;
+		height:500px;
+	}
+	#imgbox{
+		width:3500px;
+		height:500px;
+	}
+	#view{
+		width:500px;
+		height:500px;
+		overflow:hidden;
+	}
+	li>div {
+		width:15px;
+		height:15px;
+		overflow:hidden;
+	}
+	ul,li{margin:0; padding:0; list-style:none; float:left;}
+	
+	li{margin-right:30px;}
+	
+	ul {
+		position:absolute;
+		top:450px;
+		left:150px;
+	}
+	
+	#content {
+		color:red;
+		width:400px;
+		height:200px;
+		border:1px solid blue;
+		position:absolute;
+		top:200px;
+		left:50px;
+	}
+</style>
+<script>
+$(()=>{
+	$('li:first').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'0px'},1000);	
+	});
+	
+	$('li:nth-child(2)').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'-500px'},1000);	
+	});
+	
+	$('li:nth-child(3)').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'-1000px'},1000);	
+	});
+	
+	$('li:nth-child(4)').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'-1500px'},1000);	
+	});
+	
+	$('li:nth-child(5)').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'-2000px'},1000);	
+	});
+	
+	$('li:last').click(function() {
+		//객체.animate({Json데이터 옵션},밀리초,콜백함수);
+		//$('#i2').animate({marginLeft:'1000px'},2000);
+		$('#imgbox').animate({marginLeft:'-2500px'},1000);	
+	});
+});
+</script>
+</head>
+<body>
+<div id="view">
+	<ul>
+		<li><div><img src="../img/point_button.png"/></div></li>
+		<li><div><img src="../img/point_button.png"/></div></li>
+		<li><div><img src="../img/point_button.png"/></div></li>
+		<li><div><img src="../img/point_button.png"/></div></li>
+		<li><div><img src="../img/point_button.png"/></div></li>
+		<li><div><img src="../img/point_button.png"/></div></li>
+	</ul>
+	<div id="imgbox">
+		<img src="../img/do2.png"/>
+		<img src="../img/com.jpg"/>
+		<img src="../img/frog.png"/>
+		<img src="../img/title2.png"/>
+		<img src="../img/dftf.png"/>
+		<img src="../img/delight.png"/>
+	</div>
+	
+	<div id="content">
+	<h1>제목</h1>
+	<h3>작가</h3>
+	설명
+	</div>
+</div>
+</body>
+</html>

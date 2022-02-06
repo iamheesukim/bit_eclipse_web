@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="navercss.css" type="text/css"/> 
+<title>Insert title here</title>
+<script>
+   
+   function logCheck(){
+      
+      var id=document.getElementById("userid").value;
+      if(id==""){
+            alert("아이디를 입력하세요");
+            return false;
+      }
+      
+      var pwd=document.getElementById("userpwd").value;
+      if(pwd==""){
+         alert("비밀번호를 입력하세요");
+         return false;
+      }
+   }
+
+</script>
+</head>
+<body>
+<div id="wrap">
+   <div id="header">
+      <div><a href="https://www.naver.com"><img src="naver.png"/></a></div>
+   </div>
+   <div id="container">
+   <div id="login">
+      <form method="post" action="login.jsp" onsubmit="return logCheck();">
+      <input type="text" name="userid" id="userid" placeholder="아이디"/>
+      <input type="password" name="userpwd" id="userpwd" placeholder="비밀번호"/>
+      <input type="submit" value="로그인"/>
+      <input id="box" type="checkbox"/>로그인 상태 유지
+      <div id="ip"><a href="#">IP보안<span id="on">ON</span></a></div>
+      </form>
+      <hr/>
+      
+      <h3>더욱 간편한 로그인</h3>
+      <div>
+         <button type="button" onclick="location.href='#'">QR코드 로그인</button>
+         <button type="button" onclick="location.href='#'">일회용 번호 로그인</button>
+      </div>
+      <div id="id_pw">
+         <a href="#" class="search">아이디 찾기 |</a>
+         <a href="#" class="search">비밀번호 찾기 |</a>
+         <a href="#" class="search">회원가입</a>
+      </div>
+      <div><a href="https://www.naver.com"><img src="naver2.png" id="naver2"/></a></div>
+      
+   </div>
+      
+   
+   </div>
+   <div id="footer">
+   <div id="footer1">
+         <a href="#" class="#">이용약관 |</a>
+         <a href="#" class="search"><b>개인정보처리방침</b> |</a>
+         <a href="#" class="search">책임의 한계와 법적고지 |</a>
+         <a href="#" class="search">회원정보 고객센터</a>
+      </div>
+   <div id="naver12"><b><span> NAVER</span></b> Copyright ⓒ <b>NAVERCrop</b> Allright Reserved</div>
+   </div>
+
+</div>
+</body>
+</html>

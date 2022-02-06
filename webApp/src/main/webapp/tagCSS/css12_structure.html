@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- 0812-4 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	/* 구조 선택자
+		정수, 2n(짝수번째), 2n+1(홀수번째), 3n, 3n+1, ...
+		nth-child(n)
+	*/
+	
+	body>ul>li:nth-child(2n){background-color:pink;}
+	#title>li:nth-child(2n+1){background-color:orange;}
+	
+	/*
+		first-child : 처음 객체 선택
+		last-child : 마지막 객체 선택
+	*/
+	
+	#title>li:first-child{color:white;}
+	#title>li:last-child{color:green;}
+	
+</style>
+</head>
+
+<!-- 
+	html 속성
+		oncontextmenu : 마우스 오른쪽 버튼 제어 (true, false)
+		onselectstart : 선택 시작을 불가능하도록 설정 (드래그)
+ -->
+ 
+<body oncontextmenu="return false" onselectstart="return false">
+<ul id="title">
+	<li>홈페이지</li>
+	<li>자유게시판</li>
+	<li>QnA</li>
+	<li>커뮤니티</li>
+	<li>고객센터
+		<ul>
+			<li>자주하는 질문</li>
+			<li>문의사항</li>
+		</ul>
+		</li>
+		<li>회사소개</li>
+</ul>
+
+<style>
+	/* 구조 선택자
+		: first-of-type : 처음 객체를 선택한다.
+		: last-of-type : 마지막 객체를 선택한다.
+	*/
+	
+	.s>h1:first-of-type{
+		color:blue;
+	}
+	.s>h1:last-of-type{
+		color:green;
+	}
+	.s>h2:nth-of-type(2n){
+		background-color:lightblue;
+	}
+	.s>h2:not([title=abc]){
+		color:red;
+	}
+</style>
+
+<div class="s">
+	<h1>구조선택자 AAAAA</h1>
+	<h2 title="abc">구조선택자 11111</h2>
+	<h1>구조선택자 BBBBB</h1>
+	<h2>구조선택자 22222</h2>
+	<h1>구조선택자 CCCCC</h1>
+	<h2>구조선택자 33333</h2>
+	<h1>구조선택자 DDDDD</h1>
+	<h2>구조선택자 44444</h2>
+</div>
+
+<style>
+	/* 텍스트에 스타일 적용
+		::first-letter : 첫번째 문자에 대한 스타일 지정
+		::first-line : 첫번째 줄에 스타일 지정
+		::selection : 선택한(드래그) 문자에 대한 스타일 지정 (색상만 가능)
+	*/
+	
+	#txt::first-letter{color:red; font-size:1.3em; background:yellow;}
+	#txt::first-line{color:green; text-decoration:underline;}
+	#txt::selection{color:#f00; background:#000;}
+	
+</style>
+
+<div id="txt">
+먼지 없는 파란 하늘 위로 바람 따라가는 구름처럼 멀리 가지 말아요 그대로 머물러줘 My baby 내 맘에 매일
+봄날 같은 그댄 예뻐요 좋아요 어떡하면 내게 올까요 이러는 내 모습이 쑥스럽고 간지러워도 어쩔 수 없죠 그댈 사랑해요 baby
+눈뜨면 생각나는 사람이 그대란 걸 그대는 알까요 모른 체하지 마요 다 알고 있잖아요 Oh maybe baby
+매일 봐도 그댄 예뻐요 좋아요 어떡하면 내게 올까요 이러는 내 모습이 쑥스럽고 간지러워도 어쩔 수 없죠 내 사랑이 돼요 baby
+동네 꽃집을 찾아 그대에게 주고 싶은 꽃 아무리 고민해도 아는 꽃이 장미밖에 없어 용기 내 한가득 품에 담아 그대에게 가고 있어요
+장미 보다 그댄 예뻐요 사실은 말로 표현을 잘 못해요 이러는 내 모습이 쑥스럽고 간지러워도 어쩔 수 없죠 오늘부터 우린 lover
+</div>
+</body>
+</html>

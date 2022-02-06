@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- 0819-6 (7이랑 연결) -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	function eventOpen() {
+		
+		//쿠키정보 얻어오기
+		var cookie = document.cookie;
+		console.log(cookie);
+		
+		if(cookie.indexOf('event=test')==-1) { //-1이다? 그럼 이 쿠키가 없다는것
+			window.open("event.html","w","width=400, height=500");
+			//쿠키가 없으면 창이 뜸
+		}
+	}
+</script>
+</head>
+<body onload="eventOpen()">
+<h1>cookie를 이용한 팝업 만들기</h1>
+<img src="../img/frog.png"/>
+
+</body>
+</html>

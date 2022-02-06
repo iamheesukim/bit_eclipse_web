@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+body{
+   margin:0px;
+   }
+#wrap{
+   width:700px;
+   height:1200px;
+   margin:0px auto;
+}
+#header{
+   width:500px;
+   height:150px;
+   margin:0px auto;
+   
+   
+}
+#header>div{
+   padding: 100px 150px 0px;
+}
+
+#container{
+   width:500px;
+   height:500px;
+   margin:0px auto;
+   
+}
+#login{
+   margin-top:30px;
+}
+form input:not([type=checkbox]){
+   width:98%;
+   height:50px;
+   font-size:1.2em; 
+   margin-bottom:10px;
+}
+input[type=submit]{
+   width:410px;
+   background-color:blue;
+   color:#fff;
+}
+#ip{
+   float:right;
+}
+#on{
+   color:blue;
+}
+
+a:link, a:visited, a:hover{
+   text-decoration:none;
+}
+
+h3{
+   text-align:center;
+   margin-top:30px;
+}
+
+button{
+   width:245px;
+   height:50px;
+   font-size:1.2em;
+   background-color:white;
+   border: 3px solid green;
+}
+
+#id_pw{
+   text-align:center;
+   margin-top:20px;
+   color:gray;
+}
+#naver2{
+   width:500px;
+   margin-top:50px;
+}
+
+
+#footer{
+   width:500px;
+   height:500px;
+   margin:0px auto;
+   
+}
+
+#footer1{
+   width:500px;
+   margin-top:200px;
+   font-size:14.5px
+   
+}
+#naver12{
+   margin-top:10px;
+   text-align:center;
+}
+span{
+   color:green;
+   font-size:20px
+}

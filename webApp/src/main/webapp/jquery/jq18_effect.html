@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(()=> {
+		//숨기기
+		$('#hide').click(function() {
+			//					'slow','fast','normal',밀리초
+			$('img').first().hide(3000); //폭,높이가 작아지고 점점 흐려짐
+		});
+		
+		//보여주기
+		$('#show').click(function() {
+			$('img:first').show(3000);
+		});
+		
+		$('#toggle').click(function() {
+			$('img:first').toggle(3000);
+		});
+		
+		//점점진하게 fadeIn
+		$('#fadeIn').click(function() {
+			//							콜백함수 (fadein하고나서 실행됨)
+			$('img:first').fadeIn(3000, function() {
+				alert("fadeIn콜백함수 실행")
+			});
+		});
+		//점점흐리게 fadeOut
+		$('#fadeOut').click(function() {
+			$('img:first').fadeOut(3000);
+		});
+		//fadeToggle
+		$('#fadeToggle').click(function() {
+			$('img:first').fadeToggle(3000);
+		});
+		
+		//slideUp
+		$('#slideUp').click(function() {
+			//							콜백함수
+			$('img:first').slideUp(1000, function() {
+				console.log('slideUp 실행됨');
+			});
+		});
+		
+		$('#slideDown').click(function() {
+			$('img:first').slideDown(1000);
+		});
+
+		$('#slideToggle').click(function() {
+			$('img').slideToggle(1000);
+		});
+	});	
+</script>
+</head>
+<body>
+<button id="hide">숨기기(hide)</button>
+<button id="show">보여주기(show)</button>
+<button id="toggle">hide&show</button>
+<button id="fadeIn">점점진하게</button>
+<button id="fadeOut">점점흐리게</button>
+<button id="fadeToggle">fadeToggle</button>
+
+<button id="slideUp">점점위로</button>
+<button id="slideDown">점점아래로</button>
+<button id="slideToggle">슬라이드토글</button>
+<hr/>
+<img src="../img/com.jpg"/><br/>
+<img src="../img/frog.png"/>
+</body>
+</html>

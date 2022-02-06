@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 0819-2 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+   #view{
+      font-size:5em;
+   }
+</style>
+<script>
+   var num = 0;
+   
+   function numOutput(){
+      num++;
+      document.getElementById("view").innerHTML = num;
+      
+      //         호출 함수       시간 간격(밀리초)
+      var time = setTimeout("numOutput()", 500);
+      // 재귀호출: 자신의 함수를 호출
+      
+      if(num>=10){
+         // 반복 중단
+         clearTimeout(time);
+      }
+   }
+   
+</script>
+</head>
+<body onload="numOutput()">
+<h1>setTimeout() : 일정한 시간 단위 함수를 재호출하여 반복한다.</h1>
+<div id="view"></div>
+</body>
+</html>

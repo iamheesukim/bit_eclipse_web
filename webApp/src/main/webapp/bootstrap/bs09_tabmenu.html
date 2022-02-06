@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class='container'>
+	<h1>Tab Menu 만들기</h1>
+	<!-- 메뉴 -->
+	<ul class='nav nav-tabs'>								<!-- 보였다 안 보였다 -->
+		<li class='nav-item'><a href='#c1' class='nav-link active' data-toggle='tab'>여행</a></li>
+		<li class='nav-item'><a href='#c2' class='nav-link' data-toggle='tab'>푸드</a></li>
+		<li class='nav-item'><a href='#c3' class='nav-link' data-toggle='tab'>트렌드</a></li>
+		<li class='nav-item'><a href='#c2' class='nav-link' data-toggle='tab'>푸드</a></li>
+		<li class='nav-item'><a href='#c3' class='nav-link' data-toggle='tab'>트렌드</a></li>
+	</ul>
+	
+	<!-- 탭메뉴의 콘텐츠 -->
+	<div class='tab-content'>
+		<div class='tab-pane active' id='c1'>
+			여행메뉴 선택 시<br/>
+			<img src='tab5.png'/>
+		</div>
+		<div class='tab-pane' id='c2'>
+			푸드메뉴 선택 시<br/>
+			<img src='tab6.png'/>
+		</div>
+		<div class='tab-pane' id='c3'>
+			트렌드메뉴 선택 시<br/>
+			<img src='tab7.png'/>
+		</div>
+	</div>
+</div>
+</body>
+</html>

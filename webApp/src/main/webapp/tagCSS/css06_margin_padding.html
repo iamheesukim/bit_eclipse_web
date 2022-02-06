@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- 0811-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img, div{
+		width:150px;
+		height:150px;
+		border:1px solid red;
+	}
+	
+	/*
+	margin : 테두리밖 여백
+	padding : 테두리안 여백
+	
+	여백 확보
+	margin : margin-left, right, top, bottom
+	padding : padding-left, right, ...
+	*/
+	
+	img {
+		margin-right:10px;
+		margin : 50px 30px; /*이렇게 그룹화해도 됨. 위아래 / 양옆 */
+		margin : 50px 30px 0 0; /*0은 px 생략 가능*/
+	}
+	
+	div{
+		padding : 50px 30px;
+	}
+	
+	h1{background-color : pink; margin:0;}
+	ul{background-color:orange; padding-left:0; border:1px solid blue; overflow:auto;}
+	li{background-color:#ddd; float:left;}
+	/*ul안에 있는 li를 정렬하면 ul 앞에 포인터의 높이가 0이 되어버려서 안보여짐 (높이 임의로 지정해보면 보임) */
+	
+</style>
+</head>
+<body>
+
+<img src="../img/title2.png"/><img src="../img/img.png"/><img src="../img/do2.png"/>글은 어떨까?
+<!-- 그림은 여백이 생기는데 따닥따닥 붙이고 싶으면, 그냥 한줄로 쓰면 됨 -->
+<div>아무말대잔치</div>
+<h1>여백 확보 : margin padding</h1>
+<!-- h1에 기본 여백이 있음 그래서 margin 0 줘보겠음 -->
+<div>첫번째</div>
+<div>두번째</div>
+<div>세번째</div>
+<ul>
+	<li>11111</li>
+	<li>22222</li>
+</ul>
+<div>
+<b style="clear:left">글자를 표시</b>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+	$(()=> {
+		$('body').css('margin','0px');
+		
+		//핑크 바
+		$('body').html("<div></div>");
+		$('div').first().css('height','40px').css('background','rgb(238,135,152)');
+		//$('div:first'). 로 해도 됨
+		
+		//파란색 바
+		$('body').append("<div id='blue'></div>");
+		$('#blue').css('height','22px').css('background','rgb(84,174,200)');
+		
+		$('#blue').after('<img src="../tagCSS/glass/title_layer.gif"/>');
+		$('img:first').css('top','0px');
+		
+		$('body').append('<img src="../tagCSS/glass/glass1.gif"/>');
+		$('body').append('<img src="../tagCSS/glass/glass2.gif"/>');
+		$('body').append('<img src="../tagCSS/glass/glass3.gif"/>');
+		
+		$('img').css('position','absolute');
+		$('img').eq(1).css('left','400px').css('top','60px');
+		$('img').eq(2).css('left','480px').css('top','80px');
+		$('img').eq(3).css('left','300px').css('top','90px');
+	});
+</script>
+</head>
+<body>
+
+</body>
+</html>

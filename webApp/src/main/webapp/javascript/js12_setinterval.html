@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!-- 0819-1 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var interval;
+	
+	//스크롤 이동하는 함수
+	function moveScroll() {
+		//현재 위치를 기준으로 y좌표 이동
+		window.scrollBy(0, 10);
+	}
+	//setInterval을 시작하는 함수
+	function setIntervalStart() {
+		//1초에 한번씩 스크롤(y)를 이동하는 함수를 호출한다
+		//			호출함수			시간간격(밀리초)
+		interval = setInterval("moveScroll()",1000);
+			
+	}
+
+</script>
+</head>
+<body onload = "setIntervalStart()" onmouseover="clearInterval(interval)" onmouseout="setIntervalStart()">
+<h1>setInterval : 일정한 시간 간격으로 함수를 호출한다.</h1>
+<h2>특징: 호출은 한 번으로 반복수행</h2>
+<h2>반복실행중단 : clearInterval()</h2>
+<script>
+   var img = ['glass1.gif','glass2.gif','glass3.gif','dftf.png'];
+   
+   for(var i=0; i<img.length; i++){
+      document.write("<img src='../img/"+img[i]+"'/><br/>");
+   }
+</script>
+</body>
+</html>

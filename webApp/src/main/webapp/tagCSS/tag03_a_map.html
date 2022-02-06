@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--  0805-3 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map를 이용한 링크걸기</title>
+</head>
+<body>
+<img src="../img/jeju_map.jpg" usemap="#jejuMap"/><br/>
+
+<pre>
+하나의 이미지를 이용한 여러곳으로 링크를 걸 때 사용한다
+area 태그 : 특정 위치로 링크 걸때
+shape 속성 : 링크를 걸 모양 설정 (rect, circle, poly)
+coords 속성 : 좌표
+</pre>
+
+<map name="jejuMap">
+	<!--  						 x,  y,  r -->
+	<area shape="circle" coords="330,270,50" href="https://www.jeju.go.kr/hallasan/index.htm" target="_blank" title="한라산으로~~">
+	<!--  						x,  y,  x,  y -->
+	<area shape="rect" coords="190,120,310,170" href="https://www.airport.co.kr/jeju/index.do" target="_blank" title="제주공항으로~~">
+	<!--  						x,y좌표 계속~ 시계든,반시계든 한방향으로! -->
+	<area shape="poly" coords="30,220, 70,220, 130,250, 70,290, 30,280" href="../index.html"/>
+</map>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- 0818-2 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+<style>
+	body{
+		background-color:#ddd;
+		margin:0;
+	}
+	ul,li {margin:0; padding:0; list-style-type:none;}
+	
+	a:link, a:visited, a:hover{
+		text-decoration:none; color:gray;
+	}
+	
+	li{
+		padding : 5px 152px 5px 153px;
+		text-align:center;
+	}
+	#container{
+		width:700px;
+		background-color:#fff;
+		margin:0 auto;
+	}
+	
+	/*로고*/
+	.logo {
+		width:150px;
+		margin : 130px 0 30px;
+	}
+	
+	/* 다른 로그인*/
+	#container li:nth-of-type(2) {
+		text-align:right;
+	}
+	
+	form input:not([type=checkbox]) {
+		width:359px; height:50px; font-size:1.5em; margin-bottom:10px;
+	}
+	input[type=submit] {
+		width:410px;
+		background-color:blue;
+		color:white;
+	}
+	
+	form>div{overflow:auto; margin:10px;}
+	form>div>div{float:left;}
+	
+	
+	form>div>div:last-of-type{float:right;}
+	
+	#container>ul>li:last-of-type {
+		border-top:1px solid #ddd;
+		padding: 20px 0 50px;
+	}
+	
+	/*광고*/
+	img[src*=ad] {width:350px;}
+</style>
+</head>
+<body>
+<div id="container">
+	<ul>
+		<li><a href="https://www.daum.net/"><img src="logo.png" class="logo"/></a></li>
+		<li><a href="#"><img src="return.png"/>다른 방법으로 로그인</a></li>
+		<li>
+			<form method="post" action="login.jsp">
+				<input type="text" name="userid" id="userid" placeholder="아이디"/> <!-- 보통 name이랑 id 같게 설정 -->
+				<input type="password" name="ueserpwd" id="userpwd" placeholder="비밀번호"/>
+				<!-- 		submit, button, image
+							button 태그 : submit 기능을 가지고 있다. -->
+				<input type="submit" value="로그인"/>
+				<div>
+					<div><input type="checkbox" name="save"/> 로그인 상태유지</div>
+					<div><a href="#">IP보안</a><a href="#">ON</a></div>
+				</div>
+			</form>
+		</li>
+		<li>
+			<a href="#">아이디 찾기</a>
+			<a href="#">비밀번호 찾기</a>
+		</li>		
+		<li>
+			<img src="ad.jpg"/>
+		</li>	
+		<li>
+			<a href="#">&copy; Kakao Corp.</a> | <a href="#">고객센터</a>
+		</li>
+	</ul>
+</div>
+
+</body>
+</html>

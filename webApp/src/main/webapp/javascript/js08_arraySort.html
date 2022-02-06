@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div:nth-of-type(2n){
+		background-color:#ddd;
+	}
+</style>
+<script>
+	function arraySortTest(){
+		var num=[8,56,4,89,897,45,61,23,900,76,98];
+		var str=['orange','apple','pineapple','strawberry','peach','tomato','melon','mango'];
+		
+		document.getElementById("r1").innerHTML = num+"</br>"+str;
+		//write로 안하는 이유? onload를 했으므로 어차피 지워짐
+		
+		//Ascending 정렬
+		//문자를 오름차순으로 정렬
+		str.sort();
+		document.getElementById("r2").innerHTML = "오름차순->"+str;
+		
+		//숫자를 오름차순으로 정렬
+		num.sort(function(x,y){return x-y;});
+		document.getElementById("r3").innerHTML = "오름차순(수)->"+num;
+		
+		//Descading 정렬
+		//문자를 내림차순으로 정렬
+		str.reverse();
+		document.getElementById("r4").innerHTML = "내림차순->"+str;
+		
+		//숫자를 내림차순으로
+		num.sort(function(x,y){return y-x;});
+		document.getElementById("r5").innerHTML = "내림차순(수)->"+num;
+	}
+</script>
+</head>
+<body onload="arraySortTest()">
+<div id="r1"></div>
+<div id="r2"></div>
+<div id="r3"></div>
+<div id="r4"></div>
+<div id="r5"></div>
+</body>
+</html>

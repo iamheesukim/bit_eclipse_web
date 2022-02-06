@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	.c1{background-color:yellow; color:red;}
+	.c2{background-color:pink; color:white;}
+</style>
+<script>
+	$(()=>{
+		//hover는 이벤트 1개에 over,out 2개의 기능을 가진다
+		var cnt=1;
+		
+		//				오버시, 아웃시
+		$('h1').hover(
+			//over
+			function() {
+				$(this).addClass('c1');
+				$(this).html( $(this).html()+"("+ cnt++ +")");
+			//이벤트취소
+			if(cnt>10){
+				$('h1').off();
+			}
+			//out
+			},function() {
+				$(this).removeClass("c1");
+		});
+		
+		//이벤트가 한번 발생한다.
+		$('h2').onz('click',function() {
+			console.log('one 이벤트 발생');
+			$(this).addClass('c2');
+		});
+	});
+</script>
+</head>
+<body>
+<h1>hover event 처리 테스트</h1>
+<h1>hover event 처리 테스트</h1>
+<h1>hover event 처리 테스트</h1>
+<h1>hover event 처리 테스트</h1>
+<h1>hover event 처리 테스트</h1>
+
+<h2>hover event 처리 테스트</h2>
+<h2>hover event 처리 테스트</h2>
+<h2>hover event 처리 테스트</h2>
+<h2>hover event 처리 테스트</h2>
+<h2>hover event 처리 테스트</h2>
+</body>
+</html>

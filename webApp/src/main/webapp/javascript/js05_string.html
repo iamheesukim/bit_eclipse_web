@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 0817-2 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	var txt = "자바스크립트를 이용한 문자열 처리 함수";
+	
+	//글자 수 세기
+	document.write('글자 수 ->',txt.length);
+	document.write('<br/>indexOf -> ',txt.indexOf('트')); //5(0부터 카운트) indexOf, lastIndexOf, 없으면 -1
+	document.write('<br/>search -> ',txt.search('트')); //없으면 -1
+	
+	//문자열 일부 구하기
+	//slice(index,index), substring(index,index), substr(index,count);
+	document.write('<br/>slice - > ',txt.slice(3,6)); //크립트 (3부터 6직전까지)
+	document.write('<br/>substring - > ',txt.substring(3,6)); //크립트 (3부터 6직전까지)
+	document.write('<br/>substring - > ',txt.substr(3,6)); //크립트를 이 (3부터 6글자)
+	
+	//대체
+	document.write('<br/>replace - > ',txt.replace("스크립트","Script"));
+	
+	var txt2 = "Hello! JavaScript";
+	
+	//대문자 소문자
+	document.write("<br/>toUpperCase -> ", txt2.toUpperCase());
+	document.write("<br/>toLowerCase -> ", txt2.toLowerCase());
+	
+	//문자열 연결, 문자 알아내기
+	document.write("<br/>concat -> ", txt.concat(txt2)); //txt+txt2
+	document.write("<br/>charAt -> ", txt2.charAt(4)); //[4]에 있는 문자
+	document.write("<br/>charCodeAt -> ", txt2.charCodeAt(4));
+	
+	//문자열 조각내기
+	var result = txt2.split('a'); //a를 기준으로 문자열 조각냄
+	for(i=0; i<result.length; i++){
+		document.write("<br/>", result[i])
+	}
+	
+</script>
+
+</body>
+</html>
